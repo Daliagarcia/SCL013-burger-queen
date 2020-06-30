@@ -1,8 +1,23 @@
 import React from 'react';
+import firebase from './firebaseConfig/firebase.js';
+import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import 'firebase/auth';
 import logo from './logo.svg';
 import './App.css';
+import { app } from 'firebase';
+import Auth from './components/Auth';
+
 
 function App() {
+ /* firebase.auth().onAuthStateChanged(user=>{
+   console.log(user);
+   if(user){
+    console.log('usuario logueado');
+   }
+    else{
+      console.log('usuario no logueado')
+    }
+  })
   return (
     <div className="App">
       <header className="App-header">
@@ -20,7 +35,15 @@ function App() {
         </a>
       </header>
     </div>
-  );
+  );*/
+
+  return(
+    <div className="app">
+    <p>Usuario:</p>
+    <Auth />
+    </div>
+
+   );
 }
 
 export default App;
