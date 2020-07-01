@@ -6,9 +6,7 @@ const Logo = () => {
     return (
         <div className = "Container-logo">
             <img src={logo} className="Logo-login" alt="logo" />
-           
         </div>
-
     )
 };
 

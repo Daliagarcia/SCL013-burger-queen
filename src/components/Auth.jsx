@@ -1,30 +1,51 @@
 import React, { useState } from 'react';
 import 'firebase/auth';
-//import { app } from 'firebase';
-//import firebase from '../firebaseConfig/firebase.js';
-import firebase from '../firebaseConfig/firebase.js';
+import firebase, { db, errorFirebase }  from '../firebaseConfig/firebase.js';
 import Logo from './Logo.jsx';
 import '../assets/css/Auth.css';
 
-
-export default(props)=>{
+const RegisterUser = (props) => {
+    const [ name , setName ] = useState('');
+    const [ rol , setRol ] = useState('');
     const [ email , setEmail ] = useState('');
     const [ password, setPassword] = useState('');
-    //const firebase = useFirebaseApp();
-    const submit = async() => {
-        await firebase.auth().createUserWithEmailAndPassword(email, password)}
-    
 
+    const submitRegisterUser = () => { 
+        if( name === '' || rol === '' || email === '' || password === ''){
+            alert("Hay campos vacíos, favor llenarlos")
+    
+        }else{
+             firebase.auth().createUserWithEmailAndPassword(email, password)
+                .then( (user) => { 
+                    console.log(user);
+                    db.collection("Users").doc(user.uid).set({
+                        name : name,
+                        email : email,
+                        rol : rol,
+                        userUID : user.uid
+                    })
+                })
+                .catch((error) => {
+                    errorFirebase(error);
+                })
+
+            }
+    }
+    
 return(
 <div className = "Container-login">
-     <Logo/>
+    <Logo/>
     <div className = "Container-form">
-    <input type="email" id="email" placeholder = "Email" autoComplete= "off" onChange = { (ev) => setEmail(ev.target.value)} />
-    <input type="password" id="password" placeholder = "Contraseña" autoComplete= "off" onChange = { (ev) => setPassword(ev.target.value)} />
-    <button className = "Button-register" onClick = {submit} >Registrarse</button>
+    <input type="name" id="name" placeholder="Nombre" autoComplete= "off" onChange = { (ev) => setName(ev.target.value)} required/>
+    <input type="rol" id="rol" placeholder="Mesero o Cocinero" autoComplete= "off" onChange = { (ev) => setRol(ev.target.value)} />
+    <input type="email" id="email" placeholder="E-mail" autoComplete= "off" onChange = { (ev) => setEmail(ev.target.value)} />
+    <input type="password" id="password" placeholder="Contraseña" autoComplete= "off" onChange = { (ev) => setPassword(ev.target.value)} />
+    <button className = "Button-register" onClick = {submitRegisterUser}>Registrarse </button>
     </div>
   
 </div>
 
-)    
+) 
 }
+
+export default RegisterUser;
