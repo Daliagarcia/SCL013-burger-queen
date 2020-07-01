@@ -1,5 +1,5 @@
 img.Logo-login {
-    width: 50%;
+    width: 40%;
     margin: 40px 0 40px 0;
     
 }
@@ -8,7 +8,7 @@ img.Logo-login {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /*background: red;*/
+    margin-top: 2%;
 }
 
 

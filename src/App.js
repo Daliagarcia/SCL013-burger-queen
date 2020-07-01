@@ -3,11 +3,10 @@ import React from 'react';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 //import 'firebase/auth';
 //import logo from './logo.svg';
-
 //import './App.css';
 //import { app } from 'firebase';
 //importando los componentes
-import Auth from './components/Auth';
+import RegisterUser from './components/Auth.jsx';
 
 
 function App() {
@@ -41,7 +40,7 @@ function App() {
 
   return(
     <div className="app">
-     <Auth />
+     <RegisterUser />
     </div>
 
    );

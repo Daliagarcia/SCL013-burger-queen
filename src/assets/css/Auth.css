@@ -9,18 +9,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 30px;
 }
 
-#email, #password {
-    margin-bottom: 40px;
-    width: 520px;
-    height: 50px;
+#email, #password, #name, #rol {
+    margin-bottom: 20px;
+    width: 420px;
+    height: 20px;
     background: rgba(196, 196, 196, 0.3);
     border-radius: 20px;
     border: none;
     padding: 10px ;
-    font-size: 26px;
+    font-size: 16px;
 }
 
 ::placeholder {
@@ -28,14 +27,14 @@
     font-family: 'Montserrat';
 }
 .Button-register {
-    width: 380px;
-    height: 65px;
+    width: 230px;
+    height: 35px;
     background: #D11D17;
     border-radius: 40px;
     border: none;
     color: white;
     font-family: 'Montserrat';
-    font-size: 30px;
+    font-size: 18px;
     margin-top: 20px;
 
 }
