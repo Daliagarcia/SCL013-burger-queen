@@ -8,9 +8,9 @@ export const AppRouter = () => {
     return (
       <Router>
         <div>  
-          <Switch>
-            <Route path = '/' component = {RegisterUser} />
+          <Switch>          
             <Route path = '/login' component = {LoginUser} />
+            <Route path = '/' component = {RegisterUser} />
           </Switch>
         </div>
       </Router>
