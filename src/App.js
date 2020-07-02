@@ -6,8 +6,9 @@ import React from 'react';
 //import './App.css';
 
 //importando los componentes
-import RegisterUser from './components/Auth.jsx';
-import LoginUser from './components/AuthLogin.jsx';
+//import RegisterUser from './components/AuthRegister.jsx';
+//import LoginUser from './components/AuthLogin.jsx';
+import './components/fontAwesoneIcons/FontAwesone.jsx';
 
 
 function App() {
@@ -41,8 +42,7 @@ function App() {
 
   return(
     <div className="app">
-     <RegisterUser />
-     <LoginUser />
+    
     </div>
 
    );
