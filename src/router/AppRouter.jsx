@@ -9,7 +9,7 @@ export const AppRouter = () => {
       <Router>
         <div>  
           <Switch>
-            <Route path = '/register' component = {RegisterUser} />
+            <Route path = '/' component = {RegisterUser} />
             <Route path = '/login' component = {LoginUser} />
           </Switch>
         </div>
