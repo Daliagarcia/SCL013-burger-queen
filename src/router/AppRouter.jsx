@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import RegisterUser from '../components/AuthRegister';
 import LoginUser from '../components/AuthLogin';
 import '../components/fontAwesoneIcons/FontAwesone.jsx';
