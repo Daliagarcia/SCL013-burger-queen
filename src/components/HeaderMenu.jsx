@@ -1,16 +1,11 @@
 import React from 'react';
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
-import LoginUser from './AuthLogin.jsx';
-import Menu from './Menu.jsx';
-import Home from './Home.jsx';
-import OrderChef from './OrderChef.jsx';
-import OrderWaiter from './OrderWaiter.jsx'
+import {Link} from 'react-router-dom';
 
 const HeaderMenu = () => {
 
 return(
     
-        <Router>
+        
           <div>
             <nav>
               <ul>
@@ -32,16 +27,8 @@ return(
               </ul>
             </nav>
     
-            
-            <Switch>
-              <Route path = '/home' component = {Home} />
-              <Route path = '/menu' component = {Menu} />
-              <Route path = '/orderchef' component = {OrderChef} />
-              <Route path = '/orderwaiter' component = {OrderWaiter} />
-              <Route path = '/login' component = {LoginUser} />
-            </Switch>
           </div>
-        </Router>
+      
       );
 
 }

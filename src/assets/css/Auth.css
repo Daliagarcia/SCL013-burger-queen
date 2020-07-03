@@ -14,7 +14,7 @@
 #email, #password, #name, #rol {
     margin-bottom: 20px;
     width: 420px;
-    height: 20px;
+    height: 40px;
     background: rgba(196, 196, 196, 0.3);
     border-radius: 20px;
     border: none;
