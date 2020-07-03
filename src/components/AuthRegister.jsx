@@ -5,8 +5,7 @@ import firebase, {db ,errorFirebase }  from '../firebaseConfig/firebase.js';
 import Logo from './Logo.jsx';
 import '../assets/css/Auth.css';
 import { Link } from 'react-router-dom';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-//import HeaderMenu from './HeaderMenu';
+import HeaderMenu from './HeaderMenu.jsx';
 
 const RegisterUser = (props) => {
     const [ name , setName ] = useState('');
@@ -38,6 +37,7 @@ const RegisterUser = (props) => {
     
 return(
 <div className = "Container-login">
+    <HeaderMenu/>
     <Logo/>
     <div className = "Container-form">
     <input type="name" id="name" placeholder="Nombre" autoComplete= "off" onChange = { (ev) => setName(ev.target.value)} required/>
@@ -46,7 +46,7 @@ return(
     <input type="password" id="password" placeholder="Contraseña" autoComplete= "off" onChange = { (ev) => setPassword(ev.target.value)} />
     <button className = "Button-register" onClick = {submitRegisterUser}>Registrarse </button>
     <p>¿Ya estas registrado? <Link to='/login'>Inicia sesión</Link></p>
-    <FontAwesomeIcon icon="utensils" />
+
     
     </div>
   

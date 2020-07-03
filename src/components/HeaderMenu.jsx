@@ -1,10 +1,10 @@
 import React from 'react';
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
-import LoginUser from './AuthLogin.jsx';
+import {BrowserRouter as Router, Link} from 'react-router-dom';
+/* import LoginUser from './AuthLogin.jsx';
 import Menu from './Menu.jsx';
-import Home from './Home.jsx';
+import ViewHome from './Home.jsx';
 import OrderChef from './OrderChef.jsx';
-import OrderWaiter from './OrderWaiter.jsx'
+import OrderWaiter from './OrderWaiter.jsx'; */
 
 const HeaderMenu = () => {
 
@@ -32,14 +32,6 @@ return(
               </ul>
             </nav>
     
-            
-            <Switch>
-              <Route path = '/home' component = {Home} />
-              <Route path = '/menu' component = {Menu} />
-              <Route path = '/orderchef' component = {OrderChef} />
-              <Route path = '/orderwaiter' component = {OrderWaiter} />
-              <Route path = '/login' component = {LoginUser} />
-            </Switch>
           </div>
         </Router>
       );
