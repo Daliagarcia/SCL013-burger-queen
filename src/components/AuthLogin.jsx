@@ -16,16 +16,17 @@ const LoginUser = (props) => {
     }
 
 
-    return(
-        <div className = "Container-login">
+    return( 
+        <div className="Container-login"> 
             <Logo/>
             <div className = "Container-form">
             <input type="email" id="email" placeholder="E-mail" autoComplete= "off" onChange = { (ev) => setEmail(ev.target.value)} />
             <input type="password" id="password" placeholder="Contraseña" autoComplete= "off" onChange = { (ev) => setPassword(ev.target.value)} />
-            <button className = "Button-register" onClick = {loginUser}>Iniciar sesión</button>
+            <button className = "Button-register" onClick = {loginUser}>Iniciar sesión</button>         
             <p>¿No tienes una cuenta? <Link to='/register'>Regístrate</Link></p>
             </div>
-          
+        
+                     
         </div>
         
         ) 
