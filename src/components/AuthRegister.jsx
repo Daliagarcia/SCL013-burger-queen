@@ -5,7 +5,6 @@ import firebase, {db ,errorFirebase }  from '../firebaseConfig/firebase.js';
 import Logo from './Logo.jsx';
 import '../assets/css/Auth.css';
 import { Link } from 'react-router-dom';
-import HeaderMenu from './HeaderMenu.jsx';
 
 const RegisterUser = (props) => {
     const [ name , setName ] = useState('');
@@ -37,15 +36,14 @@ const RegisterUser = (props) => {
     
 return(
 <div className = "Container-login">
-    <HeaderMenu/>
     <Logo/>
     <div className = "Container-form">
-    <input type="name" id="name" placeholder="Nombre" autoComplete= "off" onChange = { (ev) => setName(ev.target.value)} required/>
+    <input type="name" id="name" placeholder="Nombre" autoComplete= "off" onChange = { (ev) => setName(ev.target.value)}/>
     <input type="rol" id="rol" placeholder="Mesero o Cocinero" autoComplete= "off" onChange = { (ev) => setRol(ev.target.value)} />
     <input type="email" id="email" placeholder="E-mail" autoComplete= "off" onChange = { (ev) => setEmail(ev.target.value)} />
     <input type="password" id="password" placeholder="Contraseña" autoComplete= "off" onChange = { (ev) => setPassword(ev.target.value)} />
     <button className = "Button-register" onClick = {submitRegisterUser}>Registrarse </button>
-    <p>¿Ya estas registrado? <Link to='/login'>Inicia sesión</Link></p>
+    <p>¿Ya estás registrado? <Link to='/login'>Inicia sesión</Link></p>
 
     
     </div>

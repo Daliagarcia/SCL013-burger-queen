@@ -1,7 +1,5 @@
 img.Logo-Header {
-    width: 8%;
-   
-    
+    width: 6%;
 }
 
 .bg-dark {
@@ -19,7 +17,10 @@ div#navbarText li a{
     text-decoration: none;
 }
 
-
+p.textLogOut {
+    color: white;
+    margin: 0px 10px 0px 10px;
+}
 
 /*.navbar-brand {
     display: inline-block;
