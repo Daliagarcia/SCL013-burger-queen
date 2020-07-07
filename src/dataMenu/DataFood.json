@@ -1,0 +1,190 @@
+{
+  "Breakfast": [{
+      "id": "bk01",
+      "category": "breakfast",
+      "name": "Café americano",
+      "price": 1000,
+      "img": ""
+    },
+    {
+      "id": "bk02",
+      "category": "breakfast",
+      "name": "Café con leche",
+      "price": 1200,
+      "img": ""
+    },
+    {
+      "id": "bk03",
+      "category": "breakfast",
+      "name": "Sandwich jamón/queso",
+      "price": 2000,
+      "img": ""
+    },
+    {
+      "id": "bk04",
+      "category": "breakfast",
+      "name": "Jugo natural",
+      "price": 1500,
+      "img": ""
+    }
+  ],
+
+  "LunchAndDinner": [{
+      "id": "ld01",
+      "category": "lunch and dinner",
+      "name": "Hamburguesa Simple",
+      "price": 4500,
+      "img": "",
+      "option": [{
+          "id": "op01",
+          "name": "Pollo"
+        },
+        {
+          "id": "op02",
+          "name": "Carne"
+        },
+        {
+          "id": "op03",
+          "name": "Vegetariana"
+        }
+      ],
+      "extras": [{
+          "id": "ex01",
+          "name": "Huevo",
+          "price": 500
+        },
+        {
+          "id": "ex02",
+          "name": "Queso",
+          "price": 500
+        }
+      ]
+    },
+    {
+      "id": "ld02",
+      "category": "lunch and dinner",
+      "name": "Hamburguesa Doble",
+      "price": 6500,
+      "img": "",
+      "option": [{
+          "id": "op01",
+          "name": "Pollo"
+        },
+        {
+          "id": "op02",
+          "name": "Carne"
+        },
+        {
+          "id": "op03",
+          "name": "Vegetariana"
+        }
+      ],
+      "extras": [{
+          "id": "ex01",
+          "name": "Huevo",
+          "price": 500
+        },
+        {
+          "id": "ex02",
+          "name": "Queso",
+          "price": 500
+        }
+      ]
+    },
+    {
+      "id": "ld03",
+      "category": "lunch and dinner",
+      "name": "Aros de cebolla",
+      "price": 3000,
+      "img": ""
+    },
+    {
+      "id": "ld04",
+      "category": "lunch and dinner",
+      "name": "Papas fritas",
+      "price": 3000,
+      "img": ""
+    },
+    {
+      "id": "ld05",
+      "category": "lunch and dinner",
+      "name": "Bebida 500 ML",
+      "price": 1000,
+      "img": ""
+    },
+    {
+      "id": "ld06",
+      "category": "lunch and dinner",
+      "name": "Bebida 750 ML",
+      "price": 1500,
+      "img": ""
+    },
+    {
+      "id": "ld07",
+      "category": "lunch and dinner",
+      "name": "Agua 500 ML",
+      "price": 1000,
+      "img": ""
+    },
+    {
+      "id": "ld07",
+      "category": "lunch and dinner",
+      "name": "Agua 750 ML",
+      "price": 1200,
+      "img": ""
+    }
+  ],
+  "Desserts": [{
+      "id": "de01",
+      "category": "desserts",
+      "name": "Brownie",
+      "price": 2500,
+      "img": ""
+    },
+    {
+      "id": "de02",
+      "category": "desserts",
+      "name": "Torta 3 leches",
+      "price": 2000,
+      "img": ""
+    },
+    {
+      "id": "de03",
+      "category": "desserts",
+      "name": "Pie de limón",
+      "price": 2000,
+      "img": ""
+    },
+    {
+      "id": "de04",
+      "category": "desserts",
+      "name": "Helado",
+      "price": 1000,
+      "img": "",
+      "option": [{
+          "id": "op01",
+          "name": "Doble",
+          "price": 1500
+        },
+        {
+          "id": "op02",
+          "name": "Triple",
+          "price": 2000
+        }
+      ],
+      "flavor": [{
+          "id": "fl01",
+          "name": "Vainilla"
+        },
+        {
+          "id": "fl02",
+          "name": "Chocolate"
+        },
+        {
+          "id": "fl03",
+          "name": "Frutilla"
+        }
+      ]
+    }
+  ]
+}

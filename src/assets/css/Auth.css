@@ -28,6 +28,13 @@
     color: rgba(0, 0, 0, 0.6);
     font-family: 'Montserrat';
 }
+
+.link-Redirect {
+    color:  #00001b;
+    font-weight: 900;
+    font-size: 18px;
+}
+
 .Button-register {
     width: 230px;
     height: 35px;

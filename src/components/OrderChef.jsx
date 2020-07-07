@@ -1,11 +1,17 @@
 import React from 'react';
 import '../assets/css/OrderChef.css';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 
-const ViewOrderChef = () => {
+const ViewOrderChef = (props) => {
+
+  const goBackArrow = () => {
+    props.history.push('/home');
+}
 
     return(
       <div className="container-order-chef">
+        <FontAwesomeIcon id = "arrowBack" icon = "arrow-circle-left" onClick = {goBackArrow}/>
 
         <h1 className="tittleOrderChef">
           Pedidos Chef
