@@ -1,0 +1,55 @@
+/* CONTAINER PEDIDOS MESERO */
+
+.container-order-waiter{
+  font-family: "Montserrat";
+  margin: 130px 20px 0px 20px;
+}
+
+/* FIN CONTAINER PEDIDOS MESERO */
+
+/* TITULO PEDIDOS MESERO */
+
+h1.tittleOrderWaiter {
+  text-align: center;
+  margin: 15px;
+  color: #00001b;
+}
+
+/* FIN TITULO PEDIDOS MESERO */
+
+/* CONTAINER PEDIDOS */
+
+.containerOrders {
+  margin: 15px;
+}
+
+.container-minicontainer-btn-state {
+  display: flex;
+}
+
+.minicontainer-orders {
+  width: 400px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  padding: 5px;
+  margin: 0px 10px 0px 0px;
+}
+
+p.infoOrder {
+  font-weight: 600;
+  font-size: 14px;
+  margin: 5px !important;
+}
+
+button.btnEntregarPedido {
+  height: 35px;
+  background: #23DD36;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+/* FIN CONTAINER PEDIDOS */
