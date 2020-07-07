@@ -18,14 +18,16 @@ const firebaseConfig = {
   export const errorFirebase = (error) => {
       const errorCode = error.code;
 
-      if (errorCode === 'auth/weak-password'){
+      if (errorCode === 'auth/weak-password') {
         alert("Contraseña débil, debe tener mínimo 6 caracteres");
-
-      }else if(errorCode === 'auth/email-already-in-use'){
+      } else if(errorCode === 'auth/email-already-in-use') {
         alert("Este correo ya está registrado con otra cuenta");
-
-      }else if(errorCode === 'auth/invalid-email'){
-        alert("Este email es inválido");
+      } else if(errorCode === 'auth/invalid-email') {
+        alert("Dirección de correo inválida");
+      } else if(errorCode === 'auth/user-not-found') {
+        alert("No existe usuario registrado con este correo");
+      } else if(errorCode === 'auth/wrong-password') {
+        alert("Contraseña inválida o incorrecta")
       }
         
   }

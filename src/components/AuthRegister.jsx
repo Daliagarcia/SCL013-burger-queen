@@ -16,16 +16,19 @@ const RegisterUser = (props) => {
         if( name === '' || rol === '' || email === '' || password === ''){
             alert("Hay campos vacíos, favor llenarlos")
     
-        }else{
+        } else {
              firebase.auth().createUserWithEmailAndPassword(email, password)
-                .then( (user) => { 
-                    console.log(user);
-                    return db.collection("users").doc(user.uid).set({
+                .then( (result) => { 
+                    //console.log(result);
+                    return db.collection("users").doc(result.user.uid).set({
                         displayName : name,
-                        email : email,
+                        email : result.user.email,
                         rol : rol,
-                        userUID : user.uid
+                        userUID : result.user.uid
                     })
+                })
+                .then(() => {
+                    props.history.push('/login');
                 })
                 .catch((error) => {
                     errorFirebase(error);
@@ -38,12 +41,13 @@ return(
 <div className = "Container-login">
     <Logo/>
     <div className = "Container-form">
-    <input type="name" id="name" placeholder="Nombre" autoComplete= "off" onChange = { (ev) => setName(ev.target.value)}/>
+    <input type="name" id="name" placeholder="Nombre y Apellido" autoComplete= "off" onChange = { (ev) => setName(ev.target.value)}/>
     <input type="rol" id="rol" placeholder="Mesero o Cocinero" autoComplete= "off" onChange = { (ev) => setRol(ev.target.value)} />
     <input type="email" id="email" placeholder="E-mail" autoComplete= "off" onChange = { (ev) => setEmail(ev.target.value)} />
     <input type="password" id="password" placeholder="Contraseña" autoComplete= "off" onChange = { (ev) => setPassword(ev.target.value)} />
-    <button className = "Button-register" onClick = {submitRegisterUser}>Registrarse </button>
-    <p>¿Ya estás registrado? <Link to='/login'>Inicia sesión</Link></p>
+    <button className = "Button-register" onClick = {submitRegisterUser}>Registrarse</button>
+    <hr/>
+    <p>¿Ya estás registrado? <Link className = 'link-Redirect' to='/login'>Inicia sesión</Link></p>
 
     
     </div>

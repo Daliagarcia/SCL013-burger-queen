@@ -1,10 +1,16 @@
 import React from 'react';
 import '../assets/css/OrderWaiter.css';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
-const ViewOrderWaiter = () => {
+const ViewOrderWaiter = (props) => {
+
+  const goBackArrow = () => {
+    props.history.push('/menu');
+}
 
     return(
       <div className="container-order-waiter">
+        <FontAwesomeIcon id = "arrowBack" icon = "arrow-circle-left" onClick = {goBackArrow} />
 
         <h1 className="tittleOrderWaiter">
           Pedidos Mesero
