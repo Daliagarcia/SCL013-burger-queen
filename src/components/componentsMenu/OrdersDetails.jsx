@@ -20,6 +20,7 @@ class OrderDetails extends Component {
 
                     <div className="miniContainer-total">
                         <p className="textTotal">TOTAL</p>
+                        <p className="textTotal">$ 0</p>
                     </div>
                 </div>
 
