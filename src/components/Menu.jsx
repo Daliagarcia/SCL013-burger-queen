@@ -14,7 +14,9 @@ class ViewMenu extends Component {
         this.state = {
             breakfast: false,
             lunch: false,
-            dessert: false
+            dessert: false,
+            client: '',
+            table: ''
         }
     }
 
@@ -50,6 +52,20 @@ class ViewMenu extends Component {
         this.props.history.push('/orderwaiter');
     }
 
+//Función para actualizar estado del cliente
+    inputNameClient(nameClient) {
+        this.setState({
+            client: nameClient
+        })
+    }
+//Función para actualizar el estado de la mesa seleccionada
+    selectTable(tableNumber) {
+        this.setState({
+            table: tableNumber
+        })
+      
+    }
+
     render() {
 
         //LEER DATA Y CARD 
@@ -82,7 +98,12 @@ class ViewMenu extends Component {
                     <FontAwesomeIcon className="arrows" id="arrowForward" icon="arrow-circle-right" onClick={this.forwardArrow.bind(this)} />
                 </div>
 
-                <NameClient />
+                <NameClient 
+                inputNameClient= {this.inputNameClient.bind(this)}
+                selectTable= {this.selectTable.bind(this)}
+                client = {this.state.client}
+                                
+                />
 
                 <div className="container-btns-menu">
                     <button className="Button-register btn-Menu" onClick={this.showBreakfast.bind(this)}>Desayuno</button>
