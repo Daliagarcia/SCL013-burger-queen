@@ -13,7 +13,7 @@ class OrderDetails extends Component {
                 <div className="container-orders">
 
                     <div className="miniContainer-product">
-                        <p className="infoProduct"> NOMBRE PRODUCTO </p>
+                        <p className="infoProduct"> NOMBRE PRODUCTO {this.props.name} </p>
                         <p className="infoProduct">PRECIO</p>
                         <p className="infoProduct"><FontAwesomeIcon icon="trash" /></p>
                     </div>
