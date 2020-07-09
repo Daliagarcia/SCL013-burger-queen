@@ -26,6 +26,10 @@ h1 {
 
 /* TEXTO BOTONES  */
 
+button .icon {
+    font-size: 25px;
+}
+
 p.textBtnHome {
   display: inline;
   margin: 30px;

@@ -22,14 +22,14 @@ const ViewHome = () => {
 
         <Link to='/menu'>
           <button className = "Button-register">
-                <FontAwesomeIcon icon="utensils" /> 
+                <FontAwesomeIcon className="icon" icon="utensils" /> 
                 <p className="textBtnHome">Mesero</p>
           </button>
         </Link>
 
         <Link to='/orderchef'>
           <button className = "Button-register">
-                <FontAwesomeIcon icon="hamburger" /> 
+                <FontAwesomeIcon className="icon" icon="hamburger" /> 
                 <p className="textBtnHome textCocinero">Cocinero</p>
           </button>
         </Link>
