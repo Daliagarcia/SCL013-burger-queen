@@ -25,7 +25,7 @@
 
 label.textName {
   font-family: 'Montserrat';
-  margin: 5px 15px 0px 0px;
+  margin: 5px 15px 10px 0px;
   font-weight: 600;
   font-size: 18px;
   color: #00172B;
@@ -38,7 +38,7 @@ input#inputClient {
   border: 1px solid #000000;
   box-sizing: border-box;
   border-radius: 10px;
-  margin-right: 15px;
+  margin: 0 15px 10px 0;
 }
 
 .select-table {
@@ -63,13 +63,6 @@ input#inputClient {
 /* FIN BOTONES */
 
 /* CONTAINER PEDIDOS  Y BOTON ENVIAR PEDIDO */
-
-.container-order-btnEnviarPedido {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .container-menu-orders {
   display: flex;
   justify-content: space-between;
@@ -79,7 +72,12 @@ input#inputClient {
 .container-card-product {
   display: flex;
   flex-wrap: wrap;
-  
+}
+
+.container-order-btnEnviarPedido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container-orders {
@@ -127,3 +125,28 @@ p.textTotal {
 
 
 /* FIN CONTAINER PEDIDOS */
+
+@media (max-width: 420px) {
+  .container-menu {
+    margin: 30px 10px 0px 10px;
+  }
+  .name-Client {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .container-btns-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container-menu-orders {
+    display: flex;
+    flex-direction: column;
+  }
+  .container-card-product {
+    justify-content: center;
+  }
+    
+
+
+}

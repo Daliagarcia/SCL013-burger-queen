@@ -16,10 +16,10 @@ class AppRouter extends Component {
   render(){
 
     return (
-   <div>
+   
       <Router>
         <HeaderMenu/>
-        <div>  
+         
           <Switch>        
             <Route path = '/home' component = {withRouter(ViewHome)} />
             <Route path = '/menu' component = {withRouter(ViewMenu)} />
@@ -28,11 +28,11 @@ class AppRouter extends Component {
             <Route path = '/login' component = {withRouter(LoginUser)} />
             <Route path = '/' component = {withRouter(RegisterUser)} />
           </Switch>
-        </div>
+        
    
       </Router>
 
-      </div>
+      
     );
   
   }
