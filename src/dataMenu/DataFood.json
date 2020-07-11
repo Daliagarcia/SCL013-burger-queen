@@ -122,8 +122,15 @@
     {
       "id": "ld07",
       "category": "lunch and dinner",
-      "name": "Agua",
-      "price": 500,
+      "name": "Agua 500 ML",
+      "price": 1000,
+      "img": "https://i.ibb.co/KrLVtdh/Agua.jpg"
+    },
+    {
+      "id": "ld08",
+      "category": "lunch and dinner",
+      "name": "Agua 750 ML",
+      "price": 1200,
       "img": "https://i.ibb.co/KrLVtdh/Agua.jpg"
     }
 
