@@ -1,5 +1,5 @@
-{
-  "Breakfast": [{
+[
+  {
       "id": "bk01",
       "category": "breakfast",
       "name": "Café americano",
@@ -26,10 +26,8 @@
       "name": "Jugo natural",
       "price": 1500,
       "img": "https://i.ibb.co/ypZh2LW/jugo-natural.png"
-    }
-  ],
-
-  "LunchAndDinner": [{
+    },
+    {
       "id": "ld01",
       "category": "lunch and dinner",
       "name": "Hamburguesa Simple",
@@ -132,10 +130,8 @@
       "name": "Agua 750 ML",
       "price": 1200,
       "img": "https://i.ibb.co/BZPDjD2/agua.png"
-    }
-
-  ],
-  "Desserts": [{
+    },
+    {
       "id": "de01",
       "category": "desserts",
       "name": "Brownie",
@@ -173,7 +169,7 @@
           "price": 2000
         }
       ],
-      "flavor": [{
+      "extras": [{
           "id": "fl01",
           "name": "Vainilla"
         },
@@ -188,4 +184,4 @@
       ]
     }
   ]
-}
+
