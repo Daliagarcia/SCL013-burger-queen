@@ -4,28 +4,28 @@
       "category": "breakfast",
       "name": "Café americano",
       "price": 1000,
-      "img": "https://i.ibb.co/Qdj1tCp/cafe-americano.jpg"
+      "img": "https://i.ibb.co/ZSG9qkh/cafe-americano.png"
     },
     {
       "id": "bk02",
       "category": "breakfast",
       "name": "Café con leche",
       "price": 1200,
-      "img": "https://i.ibb.co/f1kywG3/cafe-con-leche.jpg"
+      "img": "https://i.ibb.co/pwKsYjM/cafe-con-leche.png"
     },
     {
       "id": "bk03",
       "category": "breakfast",
       "name": "Sandwich jamón/queso",
       "price": 2000,
-      "img": "https://i.ibb.co/zrF8PMh/sandwich-with-ham-and-cheese-isolated-on-white-background.jpg"
+      "img": "https://i.ibb.co/DD72Px9/sandwich-jam-n-queso.png"
     },
     {
       "id": "bk04",
       "category": "breakfast",
       "name": "Jugo natural",
       "price": 1500,
-      "img": "https://i.ibb.co/KLXpWFZ/Isolated-orange-juice-with-slices-of-oranges-on-white-background-100-percent-fresh-and-organic-Sweet.jpg"
+      "img": "https://i.ibb.co/ypZh2LW/jugo-natural.png"
     }
   ],
 
@@ -34,7 +34,7 @@
       "category": "lunch and dinner",
       "name": "Hamburguesa Simple",
       "price": 4500,
-      "img": "https://i.ibb.co/NsjvbPx/Hamburguesa-simple.jpg",
+      "img": "https://i.ibb.co/4NCXTdS/hamburguesa-simple.png",
       "option": [{
           "id": "op01",
           "name": "Pollo"
@@ -65,7 +65,7 @@
       "category": "lunch and dinner",
       "name": "Hamburguesa Doble",
       "price": 6500,
-      "img": "https://i.ibb.co/Jv3S2WP/Hamburguesa-doble.jpg",
+      "img": "https://i.ibb.co/JxLHRbv/hamburguesa-doble.png",
       "option": [{
           "id": "op01",
           "name": "Pollo"
@@ -96,42 +96,42 @@
       "category": "lunch and dinner",
       "name": "Aros de cebolla",
       "price": 3000,
-      "img": "https://i.ibb.co/m680yX3/Aros-de-ajo.jpg"
+      "img": "https://i.ibb.co/T2ZKLkX/aros-de-ajo.png"
     },
     {
       "id": "ld04",
       "category": "lunch and dinner",
       "name": "Papas fritas",
       "price": 3000,
-      "img": "https://i.ibb.co/rG8N1H4/Papas-fritas.jpg"
+      "img": "https://i.ibb.co/7bY0fNK/papas-fritas.png"
     },
     {
       "id": "ld05",
       "category": "lunch and dinner",
       "name": "Bebida 500 ML",
       "price": 1000,
-      "img": "https://i.ibb.co/8jgjG3W/Bebida-lata.jpg"
+      "img": "https://i.ibb.co/D1nw0dD/bebida-lata.png"
     },
     {
       "id": "ld06",
       "category": "lunch and dinner",
       "name": "Bebida 750 ML",
       "price": 1500,
-      "img": "https://i.ibb.co/bHb29yR/Bebidas-botella.jpg"
+      "img": "https://i.ibb.co/jJ4WMRW/bebidas-botella.png"
     },
     {
       "id": "ld07",
       "category": "lunch and dinner",
       "name": "Agua 500 ML",
       "price": 1000,
-      "img": "https://i.ibb.co/KrLVtdh/Agua.jpg"
+      "img": "https://i.ibb.co/BZPDjD2/agua.png"
     },
     {
       "id": "ld08",
       "category": "lunch and dinner",
       "name": "Agua 750 ML",
       "price": 1200,
-      "img": "https://i.ibb.co/KrLVtdh/Agua.jpg"
+      "img": "https://i.ibb.co/BZPDjD2/agua.png"
     }
 
   ],
@@ -140,28 +140,28 @@
       "category": "desserts",
       "name": "Brownie",
       "price": 2500,
-      "img": "https://i.ibb.co/gyt6y67/Brownie.jpg"
+      "img": "https://i.ibb.co/5FrTzZX/brownie.png"
     },
     {
       "id": "de02",
       "category": "desserts",
       "name": "Trozo de torta",
       "price": 1500,
-      "img": "https://i.ibb.co/nLVmzD1/Torta.jpg"
+      "img": "https://i.ibb.co/WVqf8jh/Torta.png"
     },
     {
       "id": "de03",
       "category": "desserts",
       "name": "Pie de limón",
       "price": 2000,
-      "img": "https://i.ibb.co/ydZgYvs/Pie-de-limon.jpg"
+      "img": "https://i.ibb.co/LkK2625/pie-de-limon.png"
     },
     {
       "id": "de04",
       "category": "desserts",
       "name": "Helado",
       "price": 1000,
-      "img": "https://i.ibb.co/Q8WmC8r/Helado.jpg",
+      "img": "https://i.ibb.co/Q9sLXrC/Helado.png",
       "option": [{
           "id": "op01",
           "name": "Doble",
