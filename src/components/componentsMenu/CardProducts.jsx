@@ -7,7 +7,7 @@ const ViewCardProduct = (props) => {
     return (
      
 
-          <button className="card" style={{width: '10rem', height: 'auto'}} onClick = {props.onClick}>
+          <button className="card" style={{width: '10rem', height: '15rem'}} onClick = {props.onClick}>
             <div className="card-body">
                 {/* <h6 className="card-title">{props.name}</h6>
                 <h6 className="card-text">$ {props.price}</h6>
