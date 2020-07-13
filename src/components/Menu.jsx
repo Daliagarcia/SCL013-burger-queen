@@ -18,11 +18,14 @@ class ViewMenu extends Component {
             dessert: false,
             client: '',
             table: '',
+            order: [],
             foodSelected: null,
             option: null,
             extra: [],
             modalOn: false
         }
+
+        //this.showingModal = this.showingModal.bind(this)
     }
     //FUNCIONES PARA MOSTRAR Y OCULTAR SEGÚN EL BOTOÓN DEL MENÚ SELECCIONADO
     showBreakfast = () => {
@@ -90,7 +93,7 @@ class ViewMenu extends Component {
             extra: this.state.extras
         }
 
-        this.props.addFoodOrder(itemsShowInModal);
+        this.addFoodOrder(itemsShowInModal);
         this.modalOff();
     }
 
@@ -113,22 +116,31 @@ class ViewMenu extends Component {
     handleClickFoodSelected = (event, food) => {
         event.preventDefault();
         console.log('-food', food)
+        console.log(food.option)
         //condición que verifica si el producto tiene opciones de proteína
         if (typeof food.option === "undefined" && typeof food.extras === "undefined") {
-            return this.props.addFoodOrder(food);
+             return this.addFoodOrder(food);
         }
         //Actualiza el state del modal a true y le pasa el value de food al state de foodSelected
         this.setState({
             foodSelected: food,
             modalOn: true
+        }, () => {
+            this.state.modalOn && this.showingModal(this.state.foodSelected);
         })
     }
 
+    addFoodOrder(product) {
+        this.setState((previousState) => ({
+            order: [...previousState.order, product]
+        }));
+        console.log(this.state.order);
+    }
 
     //Función para crear el modal
     showingModal(food) {
         return (
-            <div className="modal-dialog" key={food.id} show={this.state.modalOn} hide={() => this.modalOff()} >
+            <div className="modal-dialog" key={`modal-${food.id}`} isOpen={this.state.modalOn} onHide={() => this.modalOff.bind(this)} >
                 <div className="modal-header">
                     <div className="modal.tittle">{food.name}</div> <span className="close" >X</span>
                 </div>
@@ -149,10 +161,10 @@ class ViewMenu extends Component {
 
                         <div className="col-6" onChange={(ev) => this.handleChangeInExtra(ev)}>
                             <p>Elegir extra</p>
-                            {food.extra.map((extra) => {
+                            {food.extras.map((extra) => {
                                 return (
-                                    <label className="container" >
-                                        <input key={extra.id} type="radio" value={extra.name} name={`${extra.name} ${extra.price}`} />
+                                    <label className="container" key={extra.id} >
+                                        <input key={extra.id} type="radio" value={extra.name} name={`${extra.name} $${extra.price}`} />
                                         {extra.name} $ {extra.price} </label>
 
                                 )
@@ -171,39 +183,43 @@ class ViewMenu extends Component {
                 </div>
             </div>
 
-
-
-
-        )
+       )
     }
 
 
 
     render() {
 
-        //LEER DATA DEL MENÚ Y MOSTRAR CARDS CON CADA ITEM DEL MENÚ 
+        //const { modalOn } = this.state;
+       
+            //LEER DATA DEL MENÚ Y MOSTRAR CARDS CON CADA ITEM DEL MENÚ 
         const DataMenuBreakfast =
-            jsonData.Breakfast.map((food) => {
-                return (
-                    <ViewCardProduct key={food.id} img={food.img} name={food.name} price={food.price} onClick={e => this.handleClickFoodSelected(e, food)} />
-                )
-            })
+        jsonData.Breakfast.map((food) => {
+            return (
+                <ViewCardProduct key={food.id} img={food.img} name={food.name} price={food.price} onClick={e => this.handleClickFoodSelected(e, food)} />
+            )
+        })
 
-        const DataMenuLunch =
-            jsonData.LunchAndDinner.map((food) => {
-                return (
-                    <ViewCardProduct key={food.id} img={food.img} name={food.name} price={food.price} onClick={e => this.handleClickFoodSelected(e, food)} />
-                )
-            })
+    const DataMenuLunch =
+        jsonData.LunchAndDinner.map((food) => {
+            return (
+                
+                <ViewCardProduct key={food.id} img={food.img} name={food.name} price={food.price} onClick={e => this.handleClickFoodSelected(e, food)} />
+            )
+        })
 
-        const DataMenuDessert =
-            jsonData.Desserts.map((food) => {
-                return (
-                    <ViewCardProduct key={food.id} img={food.img} name={food.name} price={food.price} onClick={e => this.handleClickFoodSelected(e, food)} />
-                )
-            })
+    const DataMenuDessert =
+        jsonData.Desserts.map((food) => {
+             return (
+                <ViewCardProduct key={food.id} img={food.img} name={food.name} price={food.price} onClick={e => this.handleClickFoodSelected(e, food)} />
+            )
+        })
 
-        const { foodSelected } = this.state;
+    
+
+
+        
+        
         
         return (
 
@@ -229,7 +245,7 @@ class ViewMenu extends Component {
                 <div className="container-menu-orders">
 
                     <div className="container-card-product">
-                        {this.state.modalOn && this.showingModal(foodSelected)}
+                        {/* {modalOn}   */}
                         {this.state.breakfast ? DataMenuBreakfast :
                             this.state.lunch ? DataMenuLunch :
                                 this.state.dessert ? DataMenuDessert : null}
