@@ -3,7 +3,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 class OrderDetails extends Component {
 
-    /* deleteProduct = (index) => {
+ deleteProduct = (index) => {
         this.props.deleteProductOrder(index)
     }
 
@@ -63,15 +63,16 @@ class OrderDetails extends Component {
              
         </div>
 
-         */
+
                 /* <div className="container-btn-enviar">
                     <button className="Button-register">Enviar pedido</button>
                 </div> 
 
+ */
 
         );
     }
 
 }
- */
+
 export default OrderDetails; 
