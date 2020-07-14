@@ -43,6 +43,7 @@ class ViewMenu extends Component {
 
     }
 
+    //FUNCION PARA AGREGAR PRODUCTOS A LA ORDEN
     addFoodOrder(product) {
         this.setState((previousState) => ({
             order: [...previousState.order, product]
@@ -50,6 +51,15 @@ class ViewMenu extends Component {
         console.log(this.state.order);
 
     }
+
+    //FUNCION PARA BORRAR PRODUCTO
+    deleteProductOrder(index){
+        let actualOrder = [...this.state.order];
+        actualOrder.splice(index, 1);
+        this.setState({
+            order: actualOrder
+        });
+    } 
 
     render() {
 
@@ -74,12 +84,14 @@ class ViewMenu extends Component {
 
 
                     <MenuButtons 
-                    addFoodOrder = {this.addFoodOrder.bind(this)}
+                        addFoodOrder = {this.addFoodOrder.bind(this)}
                     />
                 
                              
-                 
-                    <OrderDetails />
+                    <OrderDetails 
+                        deleteProductOrder = {this.deleteProductOrder.bind(this)}
+                        total = {this.state.order}
+                    />
 
                 </div>
 
