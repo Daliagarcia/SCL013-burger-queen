@@ -43,6 +43,7 @@ class ViewMenu extends Component {
 
     }
 
+    //FUNCION PARA AGREGAR PRODUCTOS A LA ORDEN
     addFoodOrder(product) {
         this.setState((previousState) => ({
             order: [...previousState.order, product]
@@ -50,6 +51,11 @@ class ViewMenu extends Component {
         console.log(this.state.order);
 
     }
+
+    //FUNCION PARA BORRAR PRODUCTO
+/*     deleteProductOrder(index){
+        let 
+    } */
 
     render() {
 
@@ -78,7 +84,6 @@ class ViewMenu extends Component {
                     />
                 
                              
-                 
                     <OrderDetails />
 
                 </div>

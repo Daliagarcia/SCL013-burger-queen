@@ -16,10 +16,6 @@ class MenuButtons extends Component {
     
    }
 
-        
-
-
-    
     //FUNCIONES PARA MOSTRAR Y OCULTAR SEGÚN EL BOTOÓN DEL MENÚ SELECCIONADO
     /*showBreakfast = () => {
         this.setState({
