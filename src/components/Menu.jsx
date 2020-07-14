@@ -15,10 +15,9 @@ class ViewMenu extends Component {
             client: '',
             table: '',
             order: [],
-        
-        }
 
-        
+
+        }    
     }
     
     goBackArrow = () => {
@@ -28,6 +27,7 @@ class ViewMenu extends Component {
     forwardArrow = () => {
         this.props.history.push('/orderwaiter');
     }
+
 
     //FUNCIÓN PARA ACTUALIZAR ESTADO DEL CLIENTE
     inputNameClient(nameClient) {
@@ -42,14 +42,17 @@ class ViewMenu extends Component {
         })
 
     }
+
     addFoodOrder(product) {
         this.setState((previousState) => ({
             order: [...previousState.order, product]
         }));
         console.log(this.state.order);
+
     }
 
     render() {
+
 
         return (
 
@@ -69,11 +72,13 @@ class ViewMenu extends Component {
                
                 <div className="container-menu-orders">
 
+
                     <MenuButtons 
                     addFoodOrder = {this.addFoodOrder.bind(this)}
                     />
                 
-                    
+                             
+                 
                     <OrderDetails />
 
                 </div>
