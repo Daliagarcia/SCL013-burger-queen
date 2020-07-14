@@ -139,7 +139,7 @@ class MenuProducts extends Component {
 
         //LEER DATA DEL MENÚ Y MOSTRAR CARDS CON CADA ITEM DEL MENÚ 
         
-        const dataMenu = jsonData.map((food) => {
+        const dataMenu = this.props.dataMenu.map((food) => {
                 return (
 
                    /*  <button className="card" style={{ width: '10rem', height: '15rem' }} onClick= {e => this.handleClickFoodSelected(e, food)} key={food.id}>
