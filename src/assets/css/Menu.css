@@ -55,6 +55,10 @@ input#inputClient {
 
 /* BOTONES */
 
+.container-btns-menu{
+  width: 160%;
+}
+
 .btn-Menu {
   margin: 20px 15px;
   width: 180px;
@@ -74,21 +78,16 @@ input#inputClient {
   flex-wrap: wrap;
 }
 
-.container-order-btnEnviarPedido {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.container-orders {
+.container-order-total {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 330px;
-  height: 340px;
+  height: auto;
   background: rgba(0, 23, 43, 0.8);
   border: 1px solid #00172B;
   border-radius: 10px;
+  margin-top: 80px;
 }
 
 .miniContainer-product {
@@ -97,12 +96,19 @@ input#inputClient {
   height: 50px;
   color: #FFFF;
   font-family: "Montserrat";
+  justify-content: space-between;
 }
 
 .infoProduct {
   font-size: 14px;
   line-height: 15px;
   margin: 15px;
+}
+
+p.infoProduct.trash:hover {
+  cursor: pointer;
+  color: #FFC107;
+  transition: 0.2s;
 }
 
 .miniContainer-total {
