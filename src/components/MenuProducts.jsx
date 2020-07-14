@@ -68,8 +68,8 @@ class MenuProducts extends Component {
     //FUNCIÓN PARA SELECCIONAR CON CLICK LA COMIDA DEL MENÚ
     handleClickFoodSelected = (event, food) => {
         event.preventDefault();
-        console.log('-food', food)
-        console.log(food.option)
+        /*console.log('-food', food)
+        console.log(food.option)*/
         //condición que verifica si el producto tiene opciones de proteína
         if (typeof food.option === "undefined" && typeof food.extras === "undefined") {
             return this.props.addFoodOrder(food);
@@ -85,6 +85,8 @@ class MenuProducts extends Component {
 
     //Función para crear el modal
     showingModal(food) {
+        console.log(food)
+        console.log(this.state.modalOn)
         return (
             <Modal key={`modal-${food.id}`} show={this.state.modalOn} onHide={() => this.modalOff()} >
                 <ModalHeader closeButton >
@@ -137,9 +139,11 @@ class MenuProducts extends Component {
 
     render() {
 
+    console.log(this.props.dataMenu)
+
         //LEER DATA DEL MENÚ Y MOSTRAR CARDS CON CADA ITEM DEL MENÚ 
         
-        const dataMenu = jsonData.map((food) => {
+        const dataMenu = this.props.dataMenu.map((food) => {
                 return (
 
                    /*  <button className="card" style={{ width: '10rem', height: '15rem' }} onClick= {e => this.handleClickFoodSelected(e, food)} key={food.id}>
@@ -148,11 +152,12 @@ class MenuProducts extends Component {
                         </div>
                         <div className="card-footer" > <p>{food.name}</p> <p>$ {food.price}</p> </div>
                     </button> */
-                    <ViewCardProduct key={food.id} img={food.img} name={food.name} price={food.price} onClick={e => this.handleClickFoodSelected(e, food)} />
+                    <ViewCardProduct key={food.id} img={food.img} name={food.name} price={food.price} 
+                    onClick={e => this.handleClickFoodSelected(e, food)} />
                 )
             })
 
-            console.log(dataMenu);
+            /*console.log(dataMenu);*/
 
         /*const DataMenuLunch =
             jsonData.LunchAndDinner.map((food) => {
@@ -173,6 +178,7 @@ class MenuProducts extends Component {
         return (
             <div className="container-card-product">
                 {modalOn && this.showingModal(foodSelected)}
+                {/*this.showingModal(foodSelected)*/}
                 <div>{dataMenu} </div>
 
             </div>
@@ -217,7 +223,8 @@ class MenuButtons extends Component {
      }*/
  
      selectMenuByCategory(category) {
-         console.log(category)
+/*          console.log(category)
+         console.log(jsonData) */
          return jsonData.filter((menu) => {
              return menu.category === category;
              
