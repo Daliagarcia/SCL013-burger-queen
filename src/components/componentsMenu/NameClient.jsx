@@ -24,9 +24,9 @@ class NameClient extends Component {
                 <input type="text" id="inputClient"  value = {this.props.client} onChange={(ev) => this.handleChangeInput(ev)} />
                 <select name="table" className = "select-table" onChange = {(ev) => this.handleChangeTableNumber(ev)}>
                     <option value="">N° Mesa</option>
-                    <option value="table1">Mesa 1</option>
-                    <option value="table2">Mesa 2</option>
-                    <option value="table3">Mesa 3</option>
+                    <option value="Mesa 1">Mesa 1</option>
+                    <option value="Mesa 2">Mesa 2</option>
+                    <option value="Mesa 3">Mesa 3</option>
                 </select>
             </div>
 

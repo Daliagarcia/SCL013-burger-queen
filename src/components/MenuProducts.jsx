@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import '../assets/css/Menu.css';
-//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-//import OrderDetails from './componentsMenu/OrdersDetails';
 import ViewCardProduct from './componentsMenu/CardProducts';
 import jsonData from "../dataMenu/DataFood.json";
 import Modal from 'react-bootstrap/Modal';
@@ -9,8 +7,6 @@ import ModalHeader from 'react-bootstrap/ModalHeader';
 import ModalTitle from 'react-bootstrap/ModalTitle';
 import ModalBody from 'react-bootstrap/ModalBody';
 import ModalFooter from 'react-bootstrap/ModalFooter';
-//import ModalHeader from 'react-bootstrap/esm/ModalHeader';
-//import { ModalTitle, ModalBody, ModalFooter, ModalHeader } from 'react-bootstrap';
 
 
 class MenuProducts extends Component {
@@ -81,14 +77,17 @@ class MenuProducts extends Component {
         })/*, () => {
             this.state.modalOn && this.showingModal(this.state.foodSelected);
         })*/
+        console.log('Seteo estado',this.state.foodSelected);
+        console.log('seteo food',food)
     }
 
     //Función para crear el modal
     showingModal(food) {
         console.log(food)
         console.log(this.state.modalOn)
+        console.log('option modal',food.option)
         return (
-            <Modal key={`modal-${food.id}`} show={this.state.modalOn} onHide={() => this.modalOff()} >
+            <Modal show={this.state.modalOn} onHide={() => this.modalOff()}  animation = {false}>
                 <ModalHeader closeButton >
                     <ModalTitle>{food.name}</ModalTitle> <span className="close" >X</span>
                 </ModalHeader>
@@ -97,32 +96,29 @@ class MenuProducts extends Component {
                     <div className="row">
                         <div className="col-6" onChange={(ev) => this.handleChangeInOption(ev)}>
                             <p>Elegir tipo</p>
-                            {food.option.map((option) => {
+                            {/* {food.option.map((opt) => {
                                 return (
-                                    <label className="container" key={option.id}>
-                                        <input type="radio" value={option.name} name="radio" required />
-                                        {option.name} </label>
+                                    <label className="container" key={opt.id}>
+                                        <input type="radio" value={opt.name} name="radio" required />
+                                        {opt.name} </label>
                                 )
-                            })}
+                            })} */}
 
                         </div>
 
                         <div className="col-6" onChange={(ev) => this.handleChangeInExtra(ev)}>
                             <p>Elegir extra</p>
-                            {food.extras.map((extra) => {
+                           {/*  {food.extras.map((extra) => {
                                 return (
                                     <label className="container" key={extra.id}  >
                                         <input key={extra.id} type="radio" value={extra.name} name={`${extra.name} ${extra.price}`} />
                                         {extra.name} $ {extra.price} </label>
 
                                 )
-                            })}
+                            })} */}
 
                         </div>
-
-
                     </div>
-
                 </ModalBody>
 
                 <ModalFooter className="modal-footer">
@@ -130,174 +126,112 @@ class MenuProducts extends Component {
                     <button type="button" className="primary" onClick={this.addProductsModal()} >Agregar</button>
                 </ModalFooter>
             </Modal>
-
-
-
-
         )
     }
 
+
     render() {
 
-    console.log(this.props.dataMenu)
+        console.log(this.props.dataMenu)
 
         //LEER DATA DEL MENÚ Y MOSTRAR CARDS CON CADA ITEM DEL MENÚ 
-        
         const dataMenu = this.props.dataMenu.map((food) => {
-                return (
+            return (
 
-                   /*  <button className="card" style={{ width: '10rem', height: '15rem' }} onClick= {e => this.handleClickFoodSelected(e, food)} key={food.id}>
-                        <div className="card-body">
-                            <img src={food.img} className="card-img-top" alt="..." />
-                        </div>
-                        <div className="card-footer" > <p>{food.name}</p> <p>$ {food.price}</p> </div>
-                    </button> */
-                    <ViewCardProduct key={food.id} img={food.img} name={food.name} price={food.price} 
+                <ViewCardProduct key={food.id} img={food.img} name={food.name} price={food.price}
                     onClick={e => this.handleClickFoodSelected(e, food)} />
-                )
-            })
-
-            /*console.log(dataMenu);*/
-
-        /*const DataMenuLunch =
-            jsonData.LunchAndDinner.map((food) => {
-                return (
-                    <ViewCardProduct key={food.id} img={food.img} name={food.name} price={food.price} onClick={e => this.handleClickFoodSelected(e, food)} />
-                )
-            })
-
-        const DataMenuDessert =
-            jsonData.Desserts.map((food) => {
-                return (
-                    <ViewCardProduct key={food.id} img={food.img} name={food.name} price={food.price} onClick={e => this.handleClickFoodSelected(e, food)} />
-                )
-            })*/
+            )
+        })
 
         const { foodSelected, modalOn } = this.state;
 
         return (
             <div className="container-card-product">
-                {modalOn && this.showingModal(foodSelected)}
+                
+                {console.log('comida del modal' ,foodSelected)}
                 {/*this.showingModal(foodSelected)*/}
-                <div>{dataMenu} </div>
-
+                {dataMenu}
+                {modalOn && this.showingModal(foodSelected)}
             </div>
+        )
+    }
+}
+
+
+//COMPONENTE QUE ENGLOBA LAS CARDS Y FUNCIONALIDAD DE DETALLE DE ORDENES
+class MenuButtons extends Component {
+
+    state = {
+        breakfast: false,
+        lunch: false,
+        dessert: false,
+    };
+
+    selectMenuByCategory(category) {
+        //console.log(category)
+        return jsonData.filter((menu) => {
+            return menu.category === category;
+        })
+    }
+
+    render() {
+
+        //CONSTANTES PARA MOSTRAR Y OCULTAR SEGÚN EL BOTÓN DEL MENÚ SELECCIONADO
+        const showBreakfast = () => {
+            this.setState({
+                breakfast: !this.state.breakfast,
+                lunch: false,
+                dessert: false
+            })
+        }
+
+        const showLunchAndDinner = () => {
+            this.setState({
+                breakfast: false,
+                lunch: !this.state.lunch,
+                dessert: false
+            })
+        }
+
+        const showDessert = () => {
+            this.setState({
+                breakfast: false,
+                lunch: false,
+                dessert: !this.state.dessert
+            })
+        }
+
+        return (
+
+            <div className="container-btnMenu-cards">
+
+                <div className="container-btns-menu">
+                    <button className="Button-register btn-Menu" onClick={showBreakfast}>Desayuno</button>
+                    <button className="Button-register btn-Menu" onClick={showLunchAndDinner}>Almuerzo</button>
+                    <button className="Button-register btn-Menu" onClick={showDessert}>Postres</button>
+                </div>
+
+                {this.state.breakfast ? (
+                    <MenuProducts
+                        addFoodOrder={this.props.addFoodOrder}
+                        dataMenu={this.selectMenuByCategory("breakfast")} />
+                ) : null}
+                {this.state.lunch ? (
+                    <MenuProducts
+                        addFoodOrder={this.props.addFoodOrder}
+                        dataMenu={this.selectMenuByCategory("lunch and dinner")} />
+                ) : null}
+                {this.state.dessert ? (
+                    <MenuProducts
+                        addFoodOrder={this.props.addFoodOrder}
+                        dataMenu={this.selectMenuByCategory("desserts")} />
+                ) : null}
+
+            </div >
 
         )
     }
 }
 
-class MenuButtons extends Component {
 
-    state = {
-         breakfast: false,
-         lunch: false,
-         dessert: false,
-     };
-     
-    
-     
-     //FUNCIONES PARA MOSTRAR Y OCULTAR SEGÚN EL BOTOÓN DEL MENÚ SELECCIONADO
-    /* showBreakfast = () => {
-         this.setState({
-             breakfast: !this.state.breakfast,
-             lunch: false,
-             dessert: false
-         })
-     }
- 
-     showLunchAndDinner = () => {
-         this.setState({
-             breakfast: false,
-             lunch: !this.state.lunch,
-             dessert: false
-         })
-     }
- 
-     showDessert = () => {
-         this.setState({
-             breakfast: false,
-             lunch: false,
-             dessert: !this.state.dessert
-         })
-     }*/
- 
-     selectMenuByCategory(category) {
-/*          console.log(category)
-         console.log(jsonData) */
-         return jsonData.filter((menu) => {
-             return menu.category === category;
-             
-         })
-         
-     }
- 
-     render() {
- 
-         const showBreakfast = () => {
-             this.setState({
-                 breakfast: !this.state.breakfast,
-                 lunch: false,
-                 dessert: false
- 
-             })
-         }
- 
-         const showLunchAndDinner = () => {
-             this.setState({
-                 breakfast: false,
-                 lunch: !this.state.lunch,
-                 dessert: false
- 
-             })
-         }
- 
-         const showDessert = () => {
-             this.setState({
-                 breakfast: false,
-                 lunch: false,
-                 dessert: !this.state.dessert
- 
-             })
-         }
-         
-         return (
- 
-             <div>
- 
-                 <div className="container-btns-menu">
-                     <button className="Button-register btn-Menu" onClick={showBreakfast}>Desayuno</button>
-                     <button className="Button-register btn-Menu" onClick={showLunchAndDinner}>Almuerzo y cena</button>
-                     <button className="Button-register btn-Menu" onClick={showDessert}>Postres</button>
-                 </div>
- 
- 
-                     {this.state.breakfast ? (
-                         <MenuProducts 
-                         addFoodOrder={this.props.addFoodOrder} 
-                         dataMenu={this.selectMenuByCategory("breakfast")} />
-                     ) : null }
-                     {this.state.lunch ? (
-                         <MenuProducts 
-                         addFoodOrder={this.props.addFoodOrder} 
-                         dataMenu={this.selectMenuByCategory("lunch and dinner")} />
-                     ) : null } 
-                     { this.state.dessert ? (
-                         <MenuProducts 
-                         addFoodOrder={this.props.addFoodOrder} 
-                         dataMenu={this.selectMenuByCategory("desserts")} />
-                     ) : null }              
-                      
- 
-             </div >
-                 
-                 
-                 
-         )
-         
-     }
-  
- }
- 
- 
- export default MenuButtons;
+export default MenuButtons;
