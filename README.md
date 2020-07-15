@@ -5,8 +5,8 @@
 * [1. ¿A quién va dirigido?](#1-¿Cómo-se-usa-esta-aplicación?)
 * [2. ¿Cómo se usa esta aplicación?](#2-a-quien-va-dirigido)
 * [3. ¿Cómo se planificó el proceso de la aplicación](#3-como-se-planificó)
-* [4. ¿Cómo se pensó en el usuario?](#4-como-se-pensó-en-el-usuario)
-* [5. Diseño de la página](#5-criterios-de-aceptación-mínimos-del-proyecto)
+* [4. ¿Cómo se pensó en el usuario?](#4-como-se-penso-en-el-usuario)
+* [5. Diseño de la página](#5-diseño-de-la-pagina)
 
 ***
 
@@ -58,11 +58,14 @@ El fondo fue definido en base a los elementos que contiene toda la aplicación, 
 
 ![fondo](https://i.ibb.co/RCmG8hm/Fondito-3.jpg)
 
+### Estructura
+
+Para la estructura y la posición de los elementos, nos enfocamos en el propósito ya mencionado de nuestro sitio, que debía ser intuitivo y fácil de usar. Es por esto que decidimos hacer contenedores amplios para cada elemento, y que todos estuvieran en una misma vista, así el trabajador no tendría que hacer tanto trabajo ni iteración en la aplicación.
+
 ### Colores
 
-En base a los colores del sitio, fueron escogidos pensando en llamar la atención de cliente, basandose en los colores principales que son usados en la mayoria de los restaurantes de comida rapida, y además al ser tonos fuertes, creímos que estos colores serían más fácil para el uso del sitio, pensando en el mesero y cocinero, es decir, son colores fáciles de diferenciar e intuitivos, si se está en constante movimiento, que es en el caso de ambos clientes. 
+En base a los colores del sitio, fueron escogidos pensando en llamar la atención de cliente, basandose en los colores principales que son usados en la mayoria de los restaurantes de comida rapida, y además al ser tonos fuertes, creímos que estos colores serían más fácil para el uso del sitio, pensando en el mesero y cocinero, es decir, son colores fáciles de diferenciar, de ver a distancia e intuitivos, sobretodo si se está en constante movimiento, que es en el caso de ambos clientes. 
 
-![colores](https://i.ibb.co/vh9YyZn/Colores-Burguer-Queen.jpg)
+![colores](https://i.ibb.co/nQZyhkX/Portada-Burguer-Queen-1.png)
 
-<!--  [_Product Owner_](https://www.youtube.com/watch?v=r2hU7MVIzxs&t=202s) LINK -->
 
