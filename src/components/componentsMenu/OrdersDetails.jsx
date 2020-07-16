@@ -28,6 +28,43 @@ class OrderDetails extends Component {
 
     render() {
 
+        console.log('props total', this.props.total)
+
+        /* const total = this.props.total.map((product, index) => {
+            if (product.option !== undefined) {
+                return (
+                    <div className="container-orders" key={index}>
+
+                        <div className="miniContainer-product" >
+                            <p className="infoProduct nameProduct">{product.name} {product.option}</p>
+                            <p className="infoProduct priceProduct">$ {product.price}</p>
+                            <p className="infoProduct trashProduct" onClick={() => this.deleteProduct(index)}>
+                                <FontAwesomeIcon icon="trash" />
+                            </p>
+                        </div>
+
+                        <div className="miniContainer-option">
+                            {product.extras.map((extra) => {
+                                return (
+                                    <p className="infoProduct">{extra}</p>
+                                )
+                            })}
+                        </div>
+                    </div>
+                )
+            } else {
+                return (
+                    <div className="miniContainer-product" key={index}>
+                        <p className="infoProduct">{product.name}</p>
+                        <p className="infoProduct">$ {product.price}</p>
+                        <p className="infoProduct trash" onClick={() => this.deleteProduct(index)}>
+                            <FontAwesomeIcon icon="trash" />
+                        </p>
+                    </div>
+                )
+            }
+        }) */
+
         return (
 
             <div className="container-order-total">
@@ -41,21 +78,20 @@ class OrderDetails extends Component {
                                 <div className="container-orders" key={index}>
 
                                     <div className="miniContainer-product" >
-                                        <p className="infoProduct nameProduct">{product.name}</p>
+                                        <p className="infoProduct nameProduct">{product.name} {product.option}</p>
                                         <p className="infoProduct priceProduct">$ {product.price}</p>
                                         <p className="infoProduct trashProduct" onClick={() => this.deleteProduct(index)}>
                                             <FontAwesomeIcon icon="trash" />
                                         </p>
                                     </div>
 
-                                  {/*   <div className="miniContainer-option">
-                                        <p className="infoProduct">{product.option}</p> 
-                                        {product.extras.map((ext) => {
+                                   <div className="miniContainer-option">
+                                        {product.extras.map((extra) => {
                                             return (
-                                                <p className="infoProduct">{ext}</p>
+                                                <p className="infoProduct">{extra}</p>
                                             )
                                         })}
-                                    </div> */}
+                                    </div>
                                 </div>
                             )
                         } else {
@@ -74,7 +110,7 @@ class OrderDetails extends Component {
                     }
 
                 </div>
-
+                
                 <div className="miniContainer-total">
                     <p className="textTotal">TOTAL</p>
                     <p className="textTotal">$ {this.totalOrderSum()}</p>

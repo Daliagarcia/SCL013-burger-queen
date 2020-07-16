@@ -117,6 +117,7 @@ class ViewMenu extends Component {
                     <div className = "container-order-btnEnviarPedido">
                         <OrderDetails
                             deleteProductOrder={this.deleteProductOrder.bind(this)}
+                            resetOrderState={this.resetOrderState.bind(this)}
                             total={this.state.order}
                         />
 
