@@ -1,57 +1,107 @@
-import React from 'react';
+import React, {Component} from 'react';
 import '../assets/css/OrderChef.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { db } from '../firebaseConfig/firebase';
 
 
-const ViewOrderChef = (props) => {
+class ViewOrderChef extends Component {
 
-  const goBackArrow = () => {
-    props.history.push('/home');
-}
+  constructor(props) {
+    super(props);
+    this.state={
+      ordersReceived: [],
+    }
 
-    return(
-      <div className="container-order-chef">
-        <FontAwesomeIcon id = "arrowBack" icon = "arrow-circle-left" onClick = {goBackArrow}/>
+  }
 
-        <h1 className="tittleOrderChef">
-          Pedidos Chef
-        </h1>
+  goBackArrow = () => {
+    this.props.history.push('/home');
+  }
 
-        <div className="containerOrders">
+  componentDidMount() {
+    const orders = db.collection('orders').where('orderstate','==','Preparando').orderBy('timeoforder','asc');
+   
+    orders.onSnapshot((querySnapshot) => {
 
-          <div className="container-minicontainer-btn-hour-state"> 
+      const ordersReceived = [];
 
-              <div className="minicontainer-orders">
-                  <p className="infoOrder"> Cliente: </p>
-                  <p className="infoOrder"> Productos: </p> 
-              </div>
+      querySnapshot.forEach((doc) => {
+        const orderData = {
+          infoOrder: doc.data(),
+          idDoc: doc.id,
+        }
 
-              <div className="btns-hour-state"> 
+        ordersReceived.push(orderData);
+        console.log(orderData);
 
-              <div className="btns-pedidos-chef">
-                    <button className="btnsOrderChef btnPrepararPedido"> 
-                        Preparar
-                    </button>
+      });
 
-                    <button className="btnsOrderChef btnPedidoListo"> 
-                        Pedido listo
-                    </button>
-              </div>
+      this.setState({
+        ordersReceived
+      })
 
-                  <p className="textStateOrder">
-                      Estado: 
-                  </p>
-              </div>
+    })
 
-          </div>
+  }
+
+
+render() {
+
+  return(
+    <div className="container-order-chef">
+      <FontAwesomeIcon id = "arrowBack" icon = "arrow-circle-left" onClick = {this.goBackArrow.bind(this)}/>
+
+      <h1 className="tittleOrderChef">
+        Pedidos Chef
+      </h1>
+
+      <div className="containerOrders">
+
+        <div className="container-minicontainer-btn-hour-state"> 
+
+        {console.log(this.state.ordersReceived)}
+
+          {this.state.ordersReceived.map((order) => {
+            return(
+            
+            
+            <div>
+                <div className="minicontainer-orders">
+                  <p className="infoOrder"> Cliente: {order.infoOrder.client} Mesa: {order.infoOrder.table}</p>
+                  <p className="infoOrder"> Productos: {order.infoOrder.order}</p> 
+                </div>
+
+                <p className="textStateOrder">
+                  Hora: {order.infoOrder.timeoforder}
+                </p>
+
+                <p className="textStateOrder">
+                  Estado: {order.infoOrder.orderstate} Entregado: {order.infoOrder.orderdelivered}
+                </p>
+
+            </div>
+            )
+          }
+        )
+      }
+            
+            <div className="btns-pedidos-chef">
+                  <button className="btnsOrderChef btnPedidoListo"> 
+                      Pedido listo
+                  </button>
+            </div>
 
         </div>
 
       </div>
 
 
+    </div>
 
-    )
+  )
+
+} 
+    
 }
 
 export default ViewOrderChef;
