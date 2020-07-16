@@ -20,13 +20,15 @@ Modal.propTypes = {
   customClass: PropTypes.string,
   show: PropTypes.bool,
   closeCallback: PropTypes.func,
+  addCallback: PropTypes.func
 };
 
 Modal.defaultProps = {
   children: <div>Empty Modal</div>,
   customClass: '',
   show: false,
-  closeCallback: () => (false)
+  closeCallback: () => (false),
+  addCallback: () => {}
 };
 
 export default Modal;

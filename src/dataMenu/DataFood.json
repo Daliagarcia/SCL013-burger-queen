@@ -1,187 +1,185 @@
-[
+[{
+    "id": "bk01",
+    "category": "breakfast",
+    "name": "Café americano",
+    "price": 1000,
+    "img": "https://i.ibb.co/ZSG9qkh/cafe-americano.png"
+  },
   {
-      "id": "bk01",
-      "category": "breakfast",
-      "name": "Café americano",
-      "price": 1000,
-      "img": "https://i.ibb.co/ZSG9qkh/cafe-americano.png"
-    },
-    {
-      "id": "bk02",
-      "category": "breakfast",
-      "name": "Café con leche",
-      "price": 1200,
-      "img": "https://i.ibb.co/pwKsYjM/cafe-con-leche.png"
-    },
-    {
-      "id": "bk03",
-      "category": "breakfast",
-      "name": "Sandwich jamón/queso",
-      "price": 2000,
-      "img": "https://i.ibb.co/DD72Px9/sandwich-jam-n-queso.png"
-    },
-    {
-      "id": "bk04",
-      "category": "breakfast",
-      "name": "Jugo natural",
-      "price": 1500,
-      "img": "https://i.ibb.co/ypZh2LW/jugo-natural.png"
-    },
-    {
-      "id": "ld01",
-      "category": "lunch and dinner",
-      "name": "Hamburguesa Simple",
-      "price": 4500,
-      "img": "https://i.ibb.co/4NCXTdS/hamburguesa-simple.png",
-      "option": [{
-          "id": "op01",
-          "name": "Pollo"
-        },
-        {
-          "id": "op02",
-          "name": "Carne"
-        },
-        {
-          "id": "op03",
-          "name": "Vegetariana"
-        }
-      ],
-      "extras": [{
-          "id": "ex01",
-          "name": "Huevo",
-          "price": 500
-        },
-        {
-          "id": "ex02",
-          "name": "Queso",
-          "price": 500
-        }
-      ]
-    },
-    {
-      "id": "ld02",
-      "category": "lunch and dinner",
-      "name": "Hamburguesa Doble",
-      "price": 6500,
-      "img": "https://i.ibb.co/JxLHRbv/hamburguesa-doble.png",
-      "option": [{
-          "id": "op01",
-          "name": "Pollo"
-        },
-        {
-          "id": "op02",
-          "name": "Carne"
-        },
-        {
-          "id": "op03",
-          "name": "Vegetariana"
-        }
-      ],
-      "extras": [{
-          "id": "ex01",
-          "name": "Huevo",
-          "price": 500
-        },
-        {
-          "id": "ex02",
-          "name": "Queso",
-          "price": 500
-        }
-      ]
-    },
-    {
-      "id": "ld03",
-      "category": "lunch and dinner",
-      "name": "Aros de cebolla",
-      "price": 3000,
-      "img": "https://i.ibb.co/T2ZKLkX/aros-de-ajo.png"
-    },
-    {
-      "id": "ld04",
-      "category": "lunch and dinner",
-      "name": "Papas fritas",
-      "price": 3000,
-      "img": "https://i.ibb.co/7bY0fNK/papas-fritas.png"
-    },
-    {
-      "id": "ld05",
-      "category": "lunch and dinner",
-      "name": "Bebida 500 ML",
-      "price": 1000,
-      "img": "https://i.ibb.co/D1nw0dD/bebida-lata.png"
-    },
-    {
-      "id": "ld06",
-      "category": "lunch and dinner",
-      "name": "Bebida 750 ML",
-      "price": 1500,
-      "img": "https://i.ibb.co/jJ4WMRW/bebidas-botella.png"
-    },
-    {
-      "id": "ld07",
-      "category": "lunch and dinner",
-      "name": "Agua 500 ML",
-      "price": 1000,
-      "img": "https://i.ibb.co/BZPDjD2/agua.png"
-    },
-    {
-      "id": "ld08",
-      "category": "lunch and dinner",
-      "name": "Agua 750 ML",
-      "price": 1200,
-      "img": "https://i.ibb.co/BZPDjD2/agua.png"
-    },
-    {
-      "id": "de01",
-      "category": "desserts",
-      "name": "Brownie",
-      "price": 2500,
-      "img": "https://i.ibb.co/5FrTzZX/brownie.png"
-    },
-    {
-      "id": "de02",
-      "category": "desserts",
-      "name": "Trozo de torta",
-      "price": 1500,
-      "img": "https://i.ibb.co/WVqf8jh/Torta.png"
-    },
-    {
-      "id": "de03",
-      "category": "desserts",
-      "name": "Pie de limón",
-      "price": 2000,
-      "img": "https://i.ibb.co/LkK2625/pie-de-limon.png"
-    },
-    {
-      "id": "de04",
-      "category": "desserts",
-      "name": "Helado",
-      "price": 1000,
-      "img": "https://i.ibb.co/Q9sLXrC/Helado.png",
-      "option": [{
-          "id": "op01",
-          "name": "Doble",
-          "price": 1500
-        },
-        {
-          "id": "op02",
-          "name": "Triple",
-          "price": 2000
-        }
-      ],
-      "extras": [{
-          "id": "fl01",
-          "name": "Vainilla"
-        },
-        {
-          "id": "fl02",
-          "name": "Chocolate"
-        },
-        {
-          "id": "fl03",
-          "name": "Frutilla"
-        }
-      ]
-    }
-  ]
-
+    "id": "bk02",
+    "category": "breakfast",
+    "name": "Café con leche",
+    "price": 1200,
+    "img": "https://i.ibb.co/pwKsYjM/cafe-con-leche.png"
+  },
+  {
+    "id": "bk03",
+    "category": "breakfast",
+    "name": "Sandwich jamón/queso",
+    "price": 2000,
+    "img": "https://i.ibb.co/DD72Px9/sandwich-jam-n-queso.png"
+  },
+  {
+    "id": "bk04",
+    "category": "breakfast",
+    "name": "Jugo natural",
+    "price": 1500,
+    "img": "https://i.ibb.co/ypZh2LW/jugo-natural.png"
+  },
+  {
+    "id": "ld01",
+    "category": "lunch and dinner",
+    "name": "Hamburguesa Simple",
+    "price": 4500,
+    "img": "https://i.ibb.co/4NCXTdS/hamburguesa-simple.png",
+    "option": [{
+        "id": "op01",
+        "name": "Pollo"
+      },
+      {
+        "id": "op02",
+        "name": "Carne"
+      },
+      {
+        "id": "op03",
+        "name": "Vegetariana"
+      }
+    ],
+    "extras": [{
+        "id": "ex01",
+        "name": "Extra Huevo",
+        "price": 500
+      },
+      {
+        "id": "ex02",
+        "name": "Extra Queso",
+        "price": 500
+      }
+    ]
+  },
+  {
+    "id": "ld02",
+    "category": "lunch and dinner",
+    "name": "Hamburguesa Doble",
+    "price": 6500,
+    "img": "https://i.ibb.co/JxLHRbv/hamburguesa-doble.png",
+    "option": [{
+        "id": "op01",
+        "name": "Pollo"
+      },
+      {
+        "id": "op02",
+        "name": "Carne"
+      },
+      {
+        "id": "op03",
+        "name": "Vegetariana"
+      }
+    ],
+    "extras": [{
+        "id": "ex01",
+        "name": "Extra Huevo",
+        "price": 500
+      },
+      {
+        "id": "ex02",
+        "name": "Extra Queso",
+        "price": 500
+      }
+    ]
+  },
+  {
+    "id": "ld03",
+    "category": "lunch and dinner",
+    "name": "Aros de cebolla",
+    "price": 3000,
+    "img": "https://i.ibb.co/T2ZKLkX/aros-de-ajo.png"
+  },
+  {
+    "id": "ld04",
+    "category": "lunch and dinner",
+    "name": "Papas fritas",
+    "price": 3000,
+    "img": "https://i.ibb.co/7bY0fNK/papas-fritas.png"
+  },
+  {
+    "id": "ld05",
+    "category": "lunch and dinner",
+    "name": "Bebida 500 ML",
+    "price": 1000,
+    "img": "https://i.ibb.co/D1nw0dD/bebida-lata.png"
+  },
+  {
+    "id": "ld06",
+    "category": "lunch and dinner",
+    "name": "Bebida 750 ML",
+    "price": 1500,
+    "img": "https://i.ibb.co/jJ4WMRW/bebidas-botella.png"
+  },
+  {
+    "id": "ld07",
+    "category": "lunch and dinner",
+    "name": "Agua 500 ML",
+    "price": 1000,
+    "img": "https://i.ibb.co/BZPDjD2/agua.png"
+  },
+  {
+    "id": "ld08",
+    "category": "lunch and dinner",
+    "name": "Agua 750 ML",
+    "price": 1200,
+    "img": "https://i.ibb.co/BZPDjD2/agua.png"
+  },
+  {
+    "id": "de01",
+    "category": "desserts",
+    "name": "Brownie",
+    "price": 2500,
+    "img": "https://i.ibb.co/5FrTzZX/brownie.png"
+  },
+  {
+    "id": "de02",
+    "category": "desserts",
+    "name": "Trozo de torta",
+    "price": 1500,
+    "img": "https://i.ibb.co/WVqf8jh/Torta.png"
+  },
+  {
+    "id": "de03",
+    "category": "desserts",
+    "name": "Pie de limón",
+    "price": 2000,
+    "img": "https://i.ibb.co/LkK2625/pie-de-limon.png"
+  },
+  {
+    "id": "de04",
+    "category": "desserts",
+    "name": "Helado",
+    "price": 1000,
+    "img": "https://i.ibb.co/Q9sLXrC/Helado.png",
+    "extras": [{
+        "id": "op01",
+        "name": "Doble bolita",
+        "price": 1500
+      },
+      {
+        "id": "op02",
+        "name": "Triple bolita",
+        "price": 2000
+      }
+    ],
+    "option": [{
+        "id": "fl01",
+        "name": "Vainilla"
+      },
+      {
+        "id": "fl02",
+        "name": "Chocolate"
+      },
+      {
+        "id": "fl03",
+        "name": "Frutilla"
+      }
+    ]
+  }
+]
