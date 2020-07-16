@@ -1,9 +1,10 @@
 /* CONTAINER PEDIDOS CHEF */
 
-.container-order-chef{
+.container-order-chef {
   font-family: "Montserrat";
   margin: 30px 20px 0px 20px;
 }
+
 #arrowBack {
   font-size: 35px;
   color: #00001b;
@@ -47,7 +48,7 @@ p.infoOrder {
   margin: 5px !important;
 }
 
-.btnsOrderChef{
+.btnsOrderChef {
   height: 35px;
   border: 1px solid #000000;
   border-radius: 5px;
@@ -55,6 +56,7 @@ p.infoOrder {
   margin: 5px;
 
 }
+
 button.btnPrepararPedido {
   background: #D11D17;
   color: #ffffff;
