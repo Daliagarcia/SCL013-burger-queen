@@ -53,12 +53,14 @@ class ViewOrderChef extends Component {
             <div className="containerOrders" key={order.id}>
 
               <div className="minicontainer-orders" >
-                <p className="infoOrder"> Cliente: {order.dataOrder.client} Mesa: {order.dataOrder.table}  </p>
+                <p className="infoClient"> Cliente: {order.dataOrder.client} | </p>
+                <p className="infoClient"> {order.dataOrder.table}  </p>
 
 
-                <div className="infoOrder"> Productos: {order.dataOrder.order.map((items, index) => {
+                <div className="infoOrder"> 
+                <p className="tittleProducts"> Productos: </p> {order.dataOrder.order.map((items, index) => {
                   return (
-                    <div key={index}>
+                    <div className="orderProduct" key={index}>
                       <p>{items.name}</p>
                       <p>{items.option}</p>
                       <p>{items.extras}</p>
@@ -70,16 +72,23 @@ class ViewOrderChef extends Component {
 
               <div className="btns-hour-state">
 
-                <button className="btnsOrderChef btnPedidoListo">
-                  Listo para entrega
+                <button className="btnsOrderChef">
+                  Listo para servir
                 </button>
 
-                <p className="textStateOrder">
-                  Estado: {order.dataOrder.orderstate}
-                </p>
-                <p className="textStateOrder">
-                  Entregado: {order.dataOrder.orderdelivered}
-                </p>
+                <div className="infoState">
+
+                  <p className="textStateOrder"> Estado:⠀
+                   {order.dataOrder.orderstate} 
+                  </p>
+                  
+                  <p className="textDeliveredOrder"> ¿Entregado?:⠀
+                  {order.dataOrder.orderdelivered} 
+                  </p>
+                  
+                
+                </div>
+                
 
               </div>
 
