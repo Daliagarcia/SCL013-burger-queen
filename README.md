@@ -2,11 +2,12 @@
 
 ## Índice
 
-* [1. ¿A quién va dirigido?](#1-¿Cómo-se-usa-esta-aplicación?)
-* [2. ¿Cómo se usa esta aplicación?](#2-a-quien-va-dirigido)
-* [3. ¿Cómo se planificó el proceso de la aplicación](#3-como-se-planificó)
-* [4. ¿Cómo se pensó en el usuario?](#4-como-se-penso-en-el-usuario)
-* [5. Diseño de la página](#5-diseño-de-la-pagina)
+* [1. ¿A quién va dirigido?](#1-¿A-quién-va-dirigido?)
+* [2. ¿Cómo se usa esta aplicación?](#2-¿Cómo-se-usa-esta-aplicación?)
+* [3. Historias de usuario](#3-Historias-de-usuario)
+* [4. ¿Cómo se planificó el proceso de la aplicación](#4-¿Cómo-se-planificó-el-proceso-de-la-aplicación)
+* [5. ¿Cómo se pensó en el usuario?](#5-¿Cómo-se-pensó-en-el-usuario?)
+* [6. Diseño de la página](#5-Diseño-de-la-pagina)
 
 ***
 
