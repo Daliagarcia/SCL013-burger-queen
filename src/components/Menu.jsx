@@ -5,7 +5,7 @@ import OrderDetails from './componentsMenu/OrdersDetails';
 import NameClient from './componentsMenu/NameClient';
 import MenuButtons from './MenuProducts.jsx';
 import { db } from '../firebaseConfig/firebase';
-
+import firebase from 'firebase/app';
 
 class ViewMenu extends Component {
 
@@ -76,7 +76,7 @@ class ViewMenu extends Component {
                 order: this.state.order,
                 orderstate: 'Preparando',
                 orderdelivered: 'No',
-                timeoforder: new Date()
+                timeoforder: firebase.firestore.FieldValue.serverTimestamp()
             })
             .then((docRef) => {
                 this.resetOrderState();

@@ -26,7 +26,7 @@ h1.tittleOrderChef {
 
 .containerOrders {
   margin: 15px;
-  display:flex;
+  display: flex;
 }
 
 .container-minicontainer-btn-hour-state {
@@ -45,7 +45,7 @@ h1.tittleOrderChef {
 
 p.infoClient {
   display: initial;
-  /* margin-right: 6px; */
+  margin-left: 5px;
   font-size: 15px;
   font-weight: 700;
 }
@@ -54,7 +54,7 @@ p.infoClient {
   margin: 2px;
 }
 
-.tittleProducts{
+.tittleProducts {
   font-weight: 700;
 }
 
@@ -63,6 +63,7 @@ p.infoClient {
   border: 1px solid #4CAF50;
   border-radius: 5px;
   font-size: 18px;
+  font-weight: bold;
   margin: 5px;
   background: #23DD36;
 
@@ -73,12 +74,47 @@ button.btnsOrderChef:hover {
   transition: 0.2s;
 }
 
-p.textStateOrder, p.textDeliveredOrder{
+p.textStateOrder,
+p.textDeliveredOrder {
   margin: 2px 5px;
   font-weight: 600;
+  font-size: 19px;
+}
+
+.stateOrder {
+  color:  #D11D17;
+  font-weight: bold;
 }
 
 
-
-
 /* FIN CONTAINER PEDIDOS */
+
+/*MODAL*/
+.Button-confirm-order {
+  background-color: #1b9827;
+  margin: 5px 5px;
+  width: 120px;
+  height: 35px;
+  border-radius: 40px;
+  border: none;
+  color: white;
+  font-family: 'Montserrat';
+  font-size: 20px;
+  /* margin-top: 20px;*/
+}
+
+.modal-footer-chef {
+  display: flex;
+  justify-content: space-around;
+  height: 100px;
+  padding: 30px;
+}
+
+.modal-header-chef {
+  border-bottom: 1px solid #00172B;
+  display: flex;
+  justify-content: space-evenly;
+  height: 60px;
+  padding-top: 10px;
+
+}
