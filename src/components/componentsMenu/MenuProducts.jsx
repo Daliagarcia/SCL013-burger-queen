@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
-import '../assets/css/Menu.css';
-import ViewCardProduct from './componentsMenu/CardProducts';
-import jsonData from "../dataMenu/DataFood.json";
-import Modal from './Modal.jsx';
+import '../../assets/css/Menu.css';
+import ViewCardProduct from './CardProducts';
+import jsonData from "../../dataMenu/DataFood.json";
+import Modal from '../Modal.jsx';
 
 class MenuProducts extends Component {
 
