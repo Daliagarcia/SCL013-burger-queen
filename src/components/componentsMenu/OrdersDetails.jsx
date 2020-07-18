@@ -39,7 +39,7 @@ class OrderDetails extends Component {
 
                         if (product.option !== undefined) {
                             return (
-                                <div className="container-orders" key={index}>
+                                <div className="container-orders-details" key={index}>
 
                                     <div className="miniContainer-product" >
                                         <p className="infoProduct nameProduct">{product.name} {product.option}</p>
