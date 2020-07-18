@@ -3,9 +3,9 @@ import '../assets/css/Menu.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import OrderDetails from './componentsMenu/OrdersDetails';
 import NameClient from './componentsMenu/NameClient';
-import MenuButtons from './MenuProducts.jsx';
+import MenuButtons from './componentsMenu/MenuProducts.jsx';
 import { db } from '../firebaseConfig/firebase';
-import firebase from 'firebase/app';
+import Navbar from './HeaderMenu';
 
 class ViewMenu extends Component {
 
@@ -67,7 +67,7 @@ class ViewMenu extends Component {
     }
 
     sendOrder() {
-        if(this.state.client === '' || this.state.table === '') {
+        if (this.state.client === '' || this.state.table === '') {
             alert('Debes indicar nombre del cliente y seleccionar mesa')
         } else {
             db.collection('orders').add({
@@ -76,60 +76,64 @@ class ViewMenu extends Component {
                 order: this.state.order,
                 orderstate: 'Preparando',
                 orderdelivered: 'No',
-                timeoforder: firebase.firestore.FieldValue.serverTimestamp()
+                timeoforder: new Date()
             })
-            .then((docRef) => {
-                this.resetOrderState();
-                console.log(docRef);
-            })
-            .catch((error) => {
-                console.log(error)
-            }) 
+                .then((docRef) => {
+                    this.resetOrderState();
+                    console.log(docRef);
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
 
 
         }
-        
+
     }
 
-    
+
     render() {
 
         return (
+            <div>
+                <Navbar />
 
-            <div className="container-menu">
-                <div className="containerArrows">
-                    <FontAwesomeIcon className="arrows" id="arrowBack" icon="arrow-circle-left" onClick={this.goBackArrow.bind(this)} />
-                    <FontAwesomeIcon className="arrows" id="arrowForward" icon="arrow-circle-right" onClick={this.forwardArrow.bind(this)} />
-                </div>
 
-                <NameClient
-                    inputNameClient={this.inputNameClient.bind(this)}
-                    selectTable={this.selectTable.bind(this)}
-                    client={this.state.client}
-                />
+                <div className="container-menu">
+                    <div className="containerArrows">
+                        <FontAwesomeIcon className="arrows" id="arrowBack" icon="arrow-circle-left" onClick={this.goBackArrow.bind(this)} />
+                        <FontAwesomeIcon className="arrows" id="arrowForward" icon="arrow-circle-right" onClick={this.forwardArrow.bind(this)} />
+                    </div>
 
-                <div className="container-menu-orders">
-
-                    <MenuButtons
-                        addFoodOrder={this.addFoodOrder.bind(this)}
+                    <NameClient
+                        inputNameClient={this.inputNameClient.bind(this)}
+                        selectTable={this.selectTable.bind(this)}
+                        client={this.state.client}
                     />
 
-                    <div className = "container-order-btnEnviarPedido">
-                        <OrderDetails
-                            deleteProductOrder={this.deleteProductOrder.bind(this)}
-                            resetOrderState={this.resetOrderState.bind(this)}
-                            total={this.state.order}
+                    <div className="container-menu-orders">
+
+                        <MenuButtons
+                            addFoodOrder={this.addFoodOrder.bind(this)}
                         />
 
-                        <div className="container-btn-enviar">
-                            <button className="Button-register" onClick={() => this.sendOrder()}>Enviar pedido</button>
-                            <button className="Button-register" onClick={() => this.resetOrderState()}>Cancelar pedido</button>
+                        <div className="container-order-btnEnviarPedido">
+                            <OrderDetails
+                                deleteProductOrder={this.deleteProductOrder.bind(this)}
+                                resetOrderState={this.resetOrderState.bind(this)}
+                                total={this.state.order}
+                            />
+
+                            <div className="container-btn-enviar">
+                                <button className="Button-register" onClick={() => this.sendOrder()}>Enviar pedido</button>
+                                <button className="Button-register" onClick={() => this.resetOrderState()}>Cancelar pedido</button>
+                            </div>
+
                         </div>
 
                     </div>
 
                 </div>
-
             </div>
         )
     }

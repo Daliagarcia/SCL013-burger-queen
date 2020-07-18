@@ -18,7 +18,7 @@ class AppRouter extends Component {
     return (
    
       <Router>
-        <HeaderMenu/>
+        
          
           <Switch>        
             <Route path = '/home' component = {withRouter(ViewHome)} />

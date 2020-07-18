@@ -3,6 +3,7 @@ import '../assets/css/OrderWaiter.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { db } from '../firebaseConfig/firebase.js';
 import Modal from './Modal.jsx';
+import Navbar from './HeaderMenu';
 
 class ViewOrderWaiter extends Component {
 
@@ -125,106 +126,110 @@ class ViewOrderWaiter extends Component {
     const { modalOn, selectedOrder } = this.state;
 
     return (
-      <div className="container-order-waiter">
-        <FontAwesomeIcon id="arrowBack" icon="arrow-circle-left" onClick={this.goBackArrow.bind(this)} />
+      <div>
+        <Navbar />
 
-        <h1 className="tittleOrderWaiter">
-          Pedidos Mesero
+        <div className="container-order-waiter">
+          <FontAwesomeIcon id="arrowBack" icon="arrow-circle-left" onClick={this.goBackArrow.bind(this)} />
+
+          <h1 className="tittleOrderWaiter">
+            Pedidos Mesero
         </h1>
 
-        {/* ORDENES LISTAS PARA ENTREGAR AL CLIENTE */}
-        {this.state.ordersready.map((order) => {
-          return (
-            <div className="container-orders" key={order.id}>
+          {/* ORDENES LISTAS PARA ENTREGAR AL CLIENTE */}
+          {this.state.ordersready.map((order) => {
+            return (
+              <div className="container-orders" key={order.id}>
 
-              <div className="minicontainer-orders-ready">
-                <p className="infoClient"> Cliente: {order.dataOrderReady.client} |</p>
-                <p className="infoClient"> {order.dataOrderReady.table}  </p>
-                <p className="infoOrder"> Total: </p>
-                <p className="infoOrder"> Productos: {order.dataOrderReady.order.map((items, index) => {
-                  return (
-                    <div className="orderProduct" key={index}>
-                      <p>{items.name}</p>
-                      <p>{items.option}</p>
-                      <p>{items.extras}</p>
-                    </div>
-                  )
-                })}
-                </p>
-              </div>
+                <div className="minicontainer-orders-ready">
+                  <p className="infoClient"> Cliente: {order.dataOrderReady.client} |</p>
+                  <p className="infoClient"> {order.dataOrderReady.table}  </p>
+                  <p className="infoOrder"> Total: </p>
+                  <p className="infoOrder"> Productos: {order.dataOrderReady.order.map((items, index) => {
+                    return (
+                      <div className="orderProduct" key={index}>
+                        <p>{items.name}</p>
+                        <p>{items.option}</p>
+                        <p>{items.extras}</p>
+                      </div>
+                    )
+                  })}
+                  </p>
+                </div>
 
-              <div className="btns-hour-state">
+                <div className="btns-hour-state">
 
-                <button className="btnsOrderChef" onClick={(event) => this.handleClickBtnOrderDelivered(event, order)}>
-                  Entregar pedido
+                  <button className="btnsOrderChef" onClick={(event) => this.handleClickBtnOrderDelivered(event, order)}>
+                    Entregar pedido
                 </button>
 
-                <div className="infoState">
+                  <div className="infoState">
 
-                  <p className="textStateOrder"> Estado:⠀<span className="stateOrder">
-                    {order.dataOrderReady.orderstate}
-                  </span></p>
+                    <p className="textStateOrder"> Estado:⠀<span className="stateOrder">
+                      {order.dataOrderReady.orderstate}
+                    </span></p>
 
-                  <p className="textDeliveredOrder"> ¿Entregado?: <span className="stateOrder">
-                    {order.dataOrderReady.orderdelivered}
-                  </span></p>
+                    <p className="textDeliveredOrder"> ¿Entregado?: <span className="stateOrder">
+                      {order.dataOrderReady.orderdelivered}
+                    </span></p>
 
-                  {/* <p className="textDeliveredOrder"> ¿Entregado?: <span className="stateOrder">
+                    {/* <p className="textDeliveredOrder"> ¿Entregado?: <span className="stateOrder">
                     {order.dataOrder.timeoforder}
                   </span></p>   */}
 
+                  </div>
                 </div>
               </div>
-            </div>
-          )
-        })}
+            )
+          })}
 
-        {/* ORDENES SIENDO PREPARADAS AUN POR EL CHEF */}
-        {this.state.orders.map((order) => {
-          return (
-            <div className="container-orders" key={order.id}>
+          {/* ORDENES SIENDO PREPARADAS AUN POR EL CHEF */}
+          {this.state.orders.map((order) => {
+            return (
+              <div className="container-orders" key={order.id}>
 
-              <div className="minicontainer-orders">
-                <p className="infoClient"> Cliente: {order.dataOrder.client} |</p>
-                <p className="infoClient"> {order.dataOrder.table}  </p>
-                <p className="infoOrder"> Total: </p>
-                <p className="infoOrder"> Productos: {order.dataOrder.order.map((items, index) => {
-                  return (
-                    <div className="orderProduct" key={index}>
-                      <p>{items.name}</p>
-                      <p>{items.option}</p>
-                      <p>{items.extras}</p>
-                    </div>
-                  )
-                })}
-                </p>
-              </div>
+                <div className="minicontainer-orders">
+                  <p className="infoClient"> Cliente: {order.dataOrder.client} |</p>
+                  <p className="infoClient"> {order.dataOrder.table}  </p>
+                  <p className="infoOrder"> Total: </p>
+                  <p className="infoOrder"> Productos: {order.dataOrder.order.map((items, index) => {
+                    return (
+                      <div className="orderProduct" key={index}>
+                        <p>{items.name}</p>
+                        <p>{items.option}</p>
+                        <p>{items.extras}</p>
+                      </div>
+                    )
+                  })}
+                  </p>
+                </div>
 
-              <div className="btns-hour-state">
+                <div className="btns-hour-state">
 
-                <div className="infoState">
+                  <div className="infoState">
 
-                  <p className="textStateOrder"> Estado:⠀<span>
-                    {order.dataOrder.orderstate}
-                  </span></p>
+                    <p className="textStateOrder"> Estado:⠀<span>
+                      {order.dataOrder.orderstate}
+                    </span></p>
 
-                  <p className="textDeliveredOrder"> ¿Entregado?: <span className="stateOrder">
-                    {order.dataOrder.orderdelivered}
-                  </span></p>
+                    <p className="textDeliveredOrder"> ¿Entregado?: <span className="stateOrder">
+                      {order.dataOrder.orderdelivered}
+                    </span></p>
 
-                  {/* <p className="textDeliveredOrder"> ¿Entregado?: <span className="stateOrder">
+                    {/* <p className="textDeliveredOrder"> ¿Entregado?: <span className="stateOrder">
                     {order.dataOrder.timeoforder}
                   </span></p>   */}
 
+                  </div>
+
                 </div>
-
               </div>
-            </div>
 
-          )
-        })}
-        {modalOn && this.showingModal(selectedOrder)}
-      </div >
+            )
+          })}
+          {modalOn && this.showingModal(selectedOrder)}
+        </div >
+      </div>
     )
   }
 }

@@ -3,6 +3,7 @@ import '../assets/css/OrderChef.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { db } from '../firebaseConfig/firebase.js';
 import Modal from './Modal.jsx';
+import Navbar from './HeaderMenu';
 
 class ViewOrderChef extends Component {
 
@@ -111,71 +112,74 @@ class ViewOrderChef extends Component {
     const { modalOn, selectedOrder } = this.state;
 
     return (
-      <div className="container-order-chef">
-        <FontAwesomeIcon id="arrowBack" icon="arrow-circle-left" onClick={this.goBackArrow.bind(this)} />
+      <div>
+        <Navbar />
 
-        <h1 className="tittleOrderChef">
-          Pedidos Chef
+        <div className="container-order-chef">
+          <FontAwesomeIcon id="arrowBack" icon="arrow-circle-left" onClick={this.goBackArrow.bind(this)} />
+
+          <h1 className="tittleOrderChef">
+            Pedidos Chef
       </h1>
 
 
-        {this.state.orders.map((order) => {
-          return (
-            <div className="containerOrders" key={order.id}>
+          {this.state.orders.map((order) => {
+            return (
+              <div className="containerOrders" key={order.id}>
 
-              <div className="minicontainer-orders" >
-                <p className="infoClient"> Cliente: {order.dataOrder.client} | </p>
-                <p className="infoClient"> {order.dataOrder.table}  </p>
+                <div className="minicontainer-orders" >
+                  <p className="infoClient"> Cliente: {order.dataOrder.client} | </p>
+                  <p className="infoClient"> {order.dataOrder.table}  </p>
 
 
-                <div className="infoOrder">
-                  <p className="tittleProducts"> Productos: </p> {order.dataOrder.order.map((items, index) => {
-                    return (
-                      <div className="orderProduct" key={index}>
-                        <p>{items.name}</p>
-                        <p>{items.option}</p>
-                        <p>{items.extras}</p>
-                      </div>
+                  <div className="infoOrder">
+                    <p className="tittleProducts"> Productos: </p> {order.dataOrder.order.map((items, index) => {
+                      return (
+                        <div className="orderProduct" key={index}>
+                          <p>{items.name}</p>
+                          <p>{items.option}</p>
+                          <p>{items.extras}</p>
+                        </div>
 
-                    )
-                  })} </div>
-              </div>
+                      )
+                    })} </div>
+                </div>
 
-              <div className="btns-hour-state">
+                <div className="btns-hour-state">
 
-                <button className="btnsOrderChef" onClick={(event) => this.handleClickBtnOrderReady(event, order)}>
-                  Listo para servir
+                  <button className="btnsOrderChef" onClick={(event) => this.handleClickBtnOrderReady(event, order)}>
+                    Listo para servir
                 </button>
 
-                <div className="infoState">
+                  <div className="infoState">
 
-                  <p className="textStateOrder"> Estado:⠀<span className="stateOrder">
-                    {order.dataOrder.orderstate}
-                  </span></p>
+                    <p className="textStateOrder"> Estado:⠀<span className="stateOrder">
+                      {order.dataOrder.orderstate}
+                    </span></p>
 
-                  <p className="textDeliveredOrder"> ¿Entregado?: <span className="stateOrder">
-                    {order.dataOrder.orderdelivered}
-                  </span></p>
+                    <p className="textDeliveredOrder"> ¿Entregado?: <span className="stateOrder">
+                      {order.dataOrder.orderdelivered}
+                    </span></p>
 
-                  {/* <p className="textDeliveredOrder"> ¿Entregado?: <span className="stateOrder">
+                    {/* <p className="textDeliveredOrder"> ¿Entregado?: <span className="stateOrder">
                     {order.dataOrder.timeoforder}
-                  </span></p>   */}              
+                  </span></p>   */}
+
+
+                  </div>
 
 
                 </div>
 
-
               </div>
 
-            </div>
+            )
+          })}
 
-          )
-        })}
+          {modalOn && this.showingModal(selectedOrder)}
 
-        {modalOn && this.showingModal(selectedOrder)}
-
+        </div>
       </div>
-
     );
   }
 }
