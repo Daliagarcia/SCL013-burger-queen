@@ -13,6 +13,7 @@
 
 ![portada-burger-queen](https://i.ibb.co/T4XfHvR/Portada-Burguer-Queen.png)
 
+
 ***
 
 ## 1. ¿A quién va dirigido?
@@ -126,11 +127,15 @@ La planificación del proceso del sitio fue a traves de trello, planificando nue
 
 Siempre se pensó en ambos usuarios, y en su trabajo, al ser estos muy intensos y rápidos, decidimos que nuestra aplicación debía ser muy intuitiva y fácil de usar. Para esto hicimos prototipos en InVision y Figma:
 
-[_Prototipo de baja fidelidad_](https://burguerqueen.invisionapp.com/freehand/Burguer-Queen--cAUeRVwlw)
+##### Protipo de baja fidelidad
+
+[_LINK PROTOTIPO_](https://burguerqueen.invisionapp.com/freehand/Burguer-Queen--cAUeRVwlw)
 
 ![Prototipo de baja fidelidad](https://i.ibb.co/m82TFSN/invision.png)
 
-[_Prototipo de alta fidelidad_](https://www.figma.com/proto/9WMSEpZ6N6bklJSZBTiSA8/Burger-Queen?node-id=8%3A2&scaling=min-zoom)
+##### Protipo de alta fidelidad
+
+[_LINK PROTOTIPO_](https://www.figma.com/proto/9WMSEpZ6N6bklJSZBTiSA8/Burger-Queen?node-id=8%3A2&scaling=min-zoom)
 
 ![Prototipo de alta fidelidad](https://i.ibb.co/PQfZS3q/figma.png)
 
