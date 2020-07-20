@@ -13,7 +13,8 @@ class ViewOrderWaiter extends Component {
       orders: [],
       ordersready: [],
       modalOn: false,
-      selectedOrder: {}
+      selectedOrder: {},
+      ordersdelivered: []
 
     }
   }
@@ -80,6 +81,25 @@ class ViewOrderWaiter extends Component {
         ordersready: ordersReadyOnly,
       });
     })
+
+    const ordersDelivered = db.collection('orders').where('orderstate', '==', 'Entregado al cliente');
+    ordersDelivered.onSnapshot((querySnapshot) => {
+      const ordersDispatchedOnly = [];
+
+      querySnapshot.forEach((doc) => {
+        const orderInfoDispatched = {
+          dataOrderDispatched: doc.data(),
+          id: doc.id
+        }
+
+        ordersDispatchedOnly.push(orderInfoDispatched);
+        console.log(orderInfoDispatched);
+      });
+
+      this.setState({
+        ordersdelivered: ordersDispatchedOnly,
+      });
+    })
   }
 
   //FUNCIÓN PARA CREAR EL MODAL QUE CONFIRMARA SI LA ORDEN ESTA LISTA PARA ENTREGAR
@@ -98,14 +118,32 @@ class ViewOrderWaiter extends Component {
 
           <div className="modal-footer-chef">
             <button type="button" className="Button-register btn-Menu" onClick={() => this.modalOff()} >NO</button>
-            <button type="button" className="Button-confirm-order" onClick={() => this.deleteOrderDelivered(order.id)} >SI</button>
+            <button type="button" className="Button-confirm-order" onClick={() => this.orderDeliveredToClient(order.id)} >SI</button>
           </div>
         </Fragment>
       </Modal>
     )
   }
 
-  deleteOrderDelivered(id) {
+
+  //FUNCION DE PEDIDO ENTREGADO
+  orderDeliveredToClient(id) {
+    const docOrderRef = db.collection('orders').doc(id);
+    return docOrderRef.update({
+      orderstate:"Entregado al cliente",
+      orderdelivered:"Si"
+    })
+    .then(() => {
+      this.modalOff();
+      console.log('Document successfully updated!');
+    })
+    .catch((error) => {
+      console.log('Error updating document: ', error);
+    })
+  }
+
+
+/*   deleteOrderDelivered(id) {
     db.collection('orders').doc(id).delete()
       .then(() => {
         this.modalOff();
@@ -119,7 +157,7 @@ class ViewOrderWaiter extends Component {
         console.log('Error removing document: ', error);
       });
 
-  }
+  } */
 
   render() {
 
@@ -227,6 +265,52 @@ class ViewOrderWaiter extends Component {
 
             )
           })}
+
+          {/* ORDENES ENTREGADAS AL CLIENTE */}
+          {this.state.ordersdelivered.map((order) => {
+            return (
+              <div className="container-orders" key={order.id}>
+
+                <div className="minicontainer-orders-delivered">
+                  <p className="infoClient"> Cliente: {order.dataOrderDispatched.client} |</p>
+                  <p className="infoClient"> {order.dataOrderDispatched.table}  </p>
+                  <p className="infoOrder"> Total: </p>
+                  <p className="infoOrder"> Productos: {order.dataOrderDispatched.order.map((items, index) => {
+                    return (
+                      <div className="orderProduct" key={index}>
+                        <p>{items.name}</p>
+                        <p>{items.option}</p>
+                        <p>{items.extras}</p>
+                      </div>
+                    )
+                  })}
+                  </p>
+                </div>
+
+                <div className="btns-hour-state">
+
+                  <div className="infoState">
+
+                    <p className="textStateOrder"> Estado:⠀<span>
+                      {order.dataOrderDispatched.orderstate}
+                    </span></p>
+
+                    <p className="textDeliveredOrder"> ¿Entregado?: <span>
+                      {order.dataOrderDispatched.orderdelivered}
+                    </span></p>
+
+                    {/* <p className="textDeliveredOrder"> ¿Entregado?: <span className="stateOrder">
+                    {order.dataOrderDispatched.timeoforder}
+                  </span></p>   */}
+
+                  </div>
+
+                </div>
+              </div>
+
+            )
+          })}
+
           {modalOn && this.showingModal(selectedOrder)}
         </div >
       </div>
