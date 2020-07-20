@@ -182,7 +182,7 @@ class ViewOrderWaiter extends Component {
                 <div className="minicontainer-orders-ready">
                   <p className="infoClient"> Cliente: {order.dataOrderReady.client} |</p>
                   <p className="infoClient"> {order.dataOrderReady.table}  </p>
-                  <p className="infoOrder"> Total: </p>
+                  {/* <p className="infoOrder"> Total: </p> */}
                   <p className="infoOrder"> Productos: {order.dataOrderReady.order.map((items, index) => {
                     return (
                       <div className="orderProduct" key={index}>
@@ -229,7 +229,7 @@ class ViewOrderWaiter extends Component {
                 <div className="minicontainer-orders">
                   <p className="infoClient"> Cliente: {order.dataOrder.client} |</p>
                   <p className="infoClient"> {order.dataOrder.table}  </p>
-                  <p className="infoOrder"> Total: </p>
+                  {/* <p className="infoOrder"> Total: </p> */}
                   <p className="infoOrder"> Productos: {order.dataOrder.order.map((items, index) => {
                     return (
                       <div className="orderProduct" key={index}>
@@ -274,7 +274,7 @@ class ViewOrderWaiter extends Component {
                 <div className="minicontainer-orders-delivered">
                   <p className="infoClient"> Cliente: {order.dataOrderDispatched.client} |</p>
                   <p className="infoClient"> {order.dataOrderDispatched.table}  </p>
-                  <p className="infoOrder"> Total: </p>
+                  {/* <p className="infoOrder"> Total: </p> */}
                   <p className="infoOrder"> Productos: {order.dataOrderDispatched.order.map((items, index) => {
                     return (
                       <div className="orderProduct" key={index}>
@@ -288,6 +288,10 @@ class ViewOrderWaiter extends Component {
                 </div>
 
                 <div className="btns-hour-state">
+
+                <button className="btnsOrderChef">
+                    Eliminar pedido
+                </button>
 
                   <div className="infoState">
 
